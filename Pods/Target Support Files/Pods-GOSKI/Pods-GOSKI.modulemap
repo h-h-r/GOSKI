@@ -1,0 +1,6 @@
+framework module Pods_GOSKI {
+  umbrella header "Pods-GOSKI-umbrella.h"
+
+  export *
+  module * { export * }
+}

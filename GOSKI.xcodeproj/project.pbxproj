@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A9E63BA0447278CEED735F6 /* Pods_GOSKI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */; };
+		CCEE2007221D100600144A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2006221D100600144A54 /* Assets.xcassets */; };
+		CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2014221D11C100144A54 /* AppDelegate.swift */; };
+		CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2015221D11C100144A54 /* HomeViewController.swift */; };
+		CCEE201B221D11C100144A54 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2016221D11C100144A54 /* LogInViewController.swift */; };
+		CCEE201C221D11C100144A54 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2017221D11C100144A54 /* WelcomeViewController.swift */; };
+		CCEE201D221D11C100144A54 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2018221D11C100144A54 /* RegisterViewController.swift */; };
+		CCEE2020221D11EB00144A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEE201E221D11EB00144A54 /* LaunchScreen.storyboard */; };
+		CCEE2021221D11EB00144A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEE201F221D11EB00144A54 /* Main.storyboard */; };
+		CCEE2024221D19D500144A54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2023221D19D500144A54 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AC384E47B8403AC635FACF8 /* Pods-GOSKI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOSKI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI.debug.xcconfig"; sourceTree = "<group>"; };
+		493CFE68DC0CF8DD396A593D /* Pods-GOSKI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOSKI.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI.release.xcconfig"; sourceTree = "<group>"; };
+		8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOSKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCEE1FFC221D100500144A54 /* GOSKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOSKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCEE2006221D100600144A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCEE200B221D100600144A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCEE2014221D11C100144A54 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCEE2015221D11C100144A54 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CCEE2016221D11C100144A54 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		CCEE2017221D11C100144A54 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CCEE2018221D11C100144A54 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CCEE201E221D11EB00144A54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCEE201F221D11EB00144A54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CCEE2023221D19D500144A54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCEE1FF9221D100500144A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9E63BA0447278CEED735F6 /* Pods_GOSKI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		396A4807C41F1D6769C91691 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98C9E0BA8532926F3625DAEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AC384E47B8403AC635FACF8 /* Pods-GOSKI.debug.xcconfig */,
+				493CFE68DC0CF8DD396A593D /* Pods-GOSKI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCEE1FF3221D100500144A54 = {
+			isa = PBXGroup;
+			children = (
+				CCEE1FFE221D100500144A54 /* GOSKI */,
+				CCEE1FFD221D100500144A54 /* Products */,
+				98C9E0BA8532926F3625DAEE /* Pods */,
+				396A4807C41F1D6769C91691 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CCEE1FFD221D100500144A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCEE1FFC221D100500144A54 /* GOSKI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCEE1FFE221D100500144A54 /* GOSKI */ = {
+			isa = PBXGroup;
+			children = (
+				CCEE2022221D129F00144A54 /* SUPPORTING FILES */,
+				CCEE2013221D117B00144A54 /* CONTROLLER */,
+				CCEE2012221D116C00144A54 /* VIEW */,
+				CCEE2011221D115200144A54 /* MODEL */,
+				CCEE2006221D100600144A54 /* Assets.xcassets */,
+			);
+			path = GOSKI;
+			sourceTree = "<group>";
+		};
+		CCEE2011221D115200144A54 /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MODEL;
+			sourceTree = "<group>";
+		};
+		CCEE2012221D116C00144A54 /* VIEW */ = {
+			isa = PBXGroup;
+			children = (
+				CCEE201E221D11EB00144A54 /* LaunchScreen.storyboard */,
+				CCEE201F221D11EB00144A54 /* Main.storyboard */,
+			);
+			path = VIEW;
+			sourceTree = "<group>";
+		};
+		CCEE2013221D117B00144A54 /* CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+				CCEE2014221D11C100144A54 /* AppDelegate.swift */,
+				CCEE2015221D11C100144A54 /* HomeViewController.swift */,
+				CCEE2016221D11C100144A54 /* LogInViewController.swift */,
+				CCEE2018221D11C100144A54 /* RegisterViewController.swift */,
+				CCEE2017221D11C100144A54 /* WelcomeViewController.swift */,
+			);
+			path = CONTROLLER;
+			sourceTree = "<group>";
+		};
+		CCEE2022221D129F00144A54 /* SUPPORTING FILES */ = {
+			isa = PBXGroup;
+			children = (
+				CCEE2023221D19D500144A54 /* GoogleService-Info.plist */,
+				CCEE200B221D100600144A54 /* Info.plist */,
+			);
+			path = "SUPPORTING FILES";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCEE1FFB221D100500144A54 /* GOSKI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCEE200E221D100600144A54 /* Build configuration list for PBXNativeTarget "GOSKI" */;
+			buildPhases = (
+				E3D45790E1F303399387CC01 /* [CP] Check Pods Manifest.lock */,
+				CCEE1FF8221D100500144A54 /* Sources */,
+				CCEE1FF9221D100500144A54 /* Frameworks */,
+				CCEE1FFA221D100500144A54 /* Resources */,
+				44B58AB0FF522D6704DE1861 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GOSKI;
+			productName = GOSKI;
+			productReference = CCEE1FFC221D100500144A54 /* GOSKI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCEE1FF4221D100500144A54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = hhr;
+				TargetAttributes = {
+					CCEE1FFB221D100500144A54 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = CCEE1FF7221D100500144A54 /* Build configuration list for PBXProject "GOSKI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCEE1FF3221D100500144A54;
+			productRefGroup = CCEE1FFD221D100500144A54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCEE1FFB221D100500144A54 /* GOSKI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCEE1FFA221D100500144A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCEE2021221D11EB00144A54 /* Main.storyboard in Resources */,
+				CCEE2024221D19D500144A54 /* GoogleService-Info.plist in Resources */,
+				CCEE2020221D11EB00144A54 /* LaunchScreen.storyboard in Resources */,
+				CCEE2007221D100600144A54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44B58AB0FF522D6704DE1861 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D45790E1F303399387CC01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GOSKI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCEE1FF8221D100500144A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */,
+				CCEE201D221D11C100144A54 /* RegisterViewController.swift in Sources */,
+				CCEE201C221D11C100144A54 /* WelcomeViewController.swift in Sources */,
+				CCEE201B221D11C100144A54 /* LogInViewController.swift in Sources */,
+				CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CCEE200C221D100600144A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CCEE200D221D100600144A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCEE200F221D100600144A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC384E47B8403AC635FACF8 /* Pods-GOSKI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPMUMY4GB5;
+				INFOPLIST_FILE = "$(SRCROOT)/GOSKI/SUPPORTING FILES/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hhrhhr.GOSKI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CCEE2010221D100600144A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 493CFE68DC0CF8DD396A593D /* Pods-GOSKI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPMUMY4GB5;
+				INFOPLIST_FILE = "$(SRCROOT)/GOSKI/SUPPORTING FILES/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hhrhhr.GOSKI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCEE1FF7221D100500144A54 /* Build configuration list for PBXProject "GOSKI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCEE200C221D100600144A54 /* Debug */,
+				CCEE200D221D100600144A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCEE200E221D100600144A54 /* Build configuration list for PBXNativeTarget "GOSKI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCEE200F221D100600144A54 /* Debug */,
+				CCEE2010221D100600144A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCEE1FF4221D100500144A54 /* Project object */;
+}

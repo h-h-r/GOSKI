@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A9E63BA0447278CEED735F6 /* Pods_GOSKI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */; };
+		74D688C0221F681700172D18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74D688BF221F681600172D18 /* GoogleService-Info.plist */; };
 		CCEE2007221D100600144A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2006221D100600144A54 /* Assets.xcassets */; };
 		CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2014221D11C100144A54 /* AppDelegate.swift */; };
 		CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2015221D11C100144A54 /* HomeViewController.swift */; };
@@ -16,12 +17,12 @@
 		CCEE201D221D11C100144A54 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2018221D11C100144A54 /* RegisterViewController.swift */; };
 		CCEE2020221D11EB00144A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEE201E221D11EB00144A54 /* LaunchScreen.storyboard */; };
 		CCEE2021221D11EB00144A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEE201F221D11EB00144A54 /* Main.storyboard */; };
-		CCEE2024221D19D500144A54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2023221D19D500144A54 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1AC384E47B8403AC635FACF8 /* Pods-GOSKI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOSKI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI.debug.xcconfig"; sourceTree = "<group>"; };
 		493CFE68DC0CF8DD396A593D /* Pods-GOSKI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOSKI.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI.release.xcconfig"; sourceTree = "<group>"; };
+		74D688BF221F681600172D18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOSKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEE1FFC221D100500144A54 /* GOSKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOSKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEE2006221D100600144A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		CCEE2018221D11C100144A54 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CCEE201E221D11EB00144A54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCEE201F221D11EB00144A54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		CCEE2023221D19D500144A54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		CCEE2022221D129F00144A54 /* SUPPORTING FILES */ = {
 			isa = PBXGroup;
 			children = (
-				CCEE2023221D19D500144A54 /* GoogleService-Info.plist */,
+				74D688BF221F681600172D18 /* GoogleService-Info.plist */,
 				CCEE200B221D100600144A54 /* Info.plist */,
 			);
 			path = "SUPPORTING FILES";
@@ -144,6 +144,7 @@
 				CCEE1FF9221D100500144A54 /* Frameworks */,
 				CCEE1FFA221D100500144A54 /* Resources */,
 				44B58AB0FF522D6704DE1861 /* [CP] Embed Pods Frameworks */,
+				23D3583515F7D2FCE5399EA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCEE2021221D11EB00144A54 /* Main.storyboard in Resources */,
-				CCEE2024221D19D500144A54 /* GoogleService-Info.plist in Resources */,
+				74D688C0221F681700172D18 /* GoogleService-Info.plist in Resources */,
 				CCEE2020221D11EB00144A54 /* LaunchScreen.storyboard in Resources */,
 				CCEE2007221D100600144A54 /* Assets.xcassets in Resources */,
 			);
@@ -202,6 +203,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23D3583515F7D2FCE5399EA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		44B58AB0FF522D6704DE1861 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

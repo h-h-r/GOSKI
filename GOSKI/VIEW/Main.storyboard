@@ -12,7 +12,7 @@
         <!-- -welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="-welcome" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="goSki" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="-welcome" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +101,7 @@
         <!--Register-->
         <scene sceneID="Wsw-RZ-Cnm">
             <objects>
-                <viewController title="Register" id="mDM-gw-RYT" customClass="RegisterViewController" customModule="goSki" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Register" id="mDM-gw-RYT" customClass="RegisterViewController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="urN-lt-iNs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
         <!--Home-->
         <scene sceneID="4LO-dr-iQO">
             <objects>
-                <viewController title="Home" id="108-V4-SAD" customClass="HomeViewController" customModule="goSki" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="108-V4-SAD" customClass="HomeViewController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aHU-N3-5qN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,7 +316,7 @@
         <!--Log In-->
         <scene sceneID="QAZ-ti-9zk">
             <objects>
-                <viewController title="Log In" id="2Pa-q6-0cT" customClass="LogInViewController" customModule="goSki" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Log In" id="2Pa-q6-0cT" customClass="LogInViewController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yrj-U8-KkS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

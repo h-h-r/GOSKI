@@ -30,6 +30,7 @@
 		74D688CA221F6EE600172D18 /* skiMountainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = skiMountainData.swift; path = "../../../../goSki-ios/goSki/SupportingFile/skiMountainData.swift"; sourceTree = "<group>"; };
 		74D688CC221F6FC100172D18 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Location.gpx; path = "../../../../goSki-ios/goSki/SupportingFile/Location.gpx"; sourceTree = "<group>"; };
 		8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOSKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC379A12221F6D5C009EEC2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../googleplist/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCEE1FFC221D100500144A54 /* GOSKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOSKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEE2006221D100600144A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEE200B221D100600144A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,7 +135,7 @@
 		CCEE2022221D129F00144A54 /* SUPPORTING FILES */ = {
 			isa = PBXGroup;
 			children = (
-				74D688BF221F681600172D18 /* GoogleService-Info.plist */,
+				CC379A12221F6D5C009EEC2B /* GoogleService-Info.plist */,
 				CCEE200B221D100600144A54 /* Info.plist */,
 				74D688CC221F6FC100172D18 /* Location.gpx */,
 			);

@@ -286,7 +286,7 @@
         <!--FindMountain-->
         <scene sceneID="EsP-nN-Z5x">
             <objects>
-                <viewController title="FindMountain" id="SUO-Ai-yTP" sceneMemberID="viewController">
+                <viewController title="FindMountain" id="SUO-Ai-yTP" customClass="MountainFinderController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zq4-bd-qYT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

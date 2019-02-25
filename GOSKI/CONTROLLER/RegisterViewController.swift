@@ -48,6 +48,19 @@ class RegisterViewController: UIViewController {
                     SVProgressHUD.dismiss()
                     print("registration successful!")
                     self.performSegue(withIdentifier: "goToHomeFromRegister", sender: self)
+                    let usersDB = Database.database().reference().child("USERS")
+                    let userEmail = Auth.auth().currentUser!.email!
+                    let emailField = (userEmail.prefix(userEmail.count-4))
+                    let userDict :[String : Any] = ["emailField":emailField,"nickName": emailField, "shareLocation":false]
+                    usersDB.child("\(emailField)").setValue(userDict, withCompletionBlock: { (Error, DatabaseReference) in
+                        if Error != nil {
+                            print("eeeeeeeerror",Error!)
+                        }else{
+                            print("new user saved in db successfully!")
+                          
+                        }
+                    })
+//                    usersDB.child
                 }
             }
             

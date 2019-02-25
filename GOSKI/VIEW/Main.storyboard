@@ -298,10 +298,10 @@
             </objects>
             <point key="canvasLocation" x="503" y="683"/>
         </scene>
-        <!--FindFriend-->
+        <!--FindFriends-->
         <scene sceneID="ur5-jq-ghv">
             <objects>
-                <viewController title="FindFriend" id="mW0-7g-Yfh" sceneMemberID="viewController">
+                <viewController title="FindFriends" id="mW0-7g-Yfh" customClass="FindFriendsViewController" customModule="GOSKI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fek-Py-vsC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -425,6 +425,6 @@
         <image name="loginBackground" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7XR-Ph-5Ps"/>
+        <segue reference="HgR-3f-RQR"/>
     </inferredMetricsTieBreakers>
 </document>

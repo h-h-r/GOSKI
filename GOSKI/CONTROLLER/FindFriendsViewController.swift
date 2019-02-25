@@ -8,26 +8,51 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class FindFriendsViewController: UIViewController {
+class FindFriendsViewController: UIViewController,CLLocationManagerDelegate {
 
     var userEmail = ""
+    var locationManager = CLLocationManager()
+    
+    //    var latitude :
+//    var longitude :
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* update USERS.shareLocation state to true */
         userEmail = Auth.auth().currentUser!.email!
         print(userEmail)
         print(userEmail.prefix(userEmail.count-4))
         Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":true])
-//        Database.database().reference().child("\(userEmail.prefix(userEmail.count-4))")
-//        Auth.auth().currentUser!.email.hashValue
-        // Do any additional setup after loading the view.
+        
+        /*setup coreLocationManager */
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count - 1]
+        if location.horizontalAccuracy > 0{
+            print("longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+            Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("location").updateChildValues(["location":[location.coordinate.longitude,location.coordinate.latitude]])
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
 //        userEmail = Auth.auth().currentUser!.email!
 //        print(userEmail)
 //        print(userEmail.prefix(userEmail.count-4))
+        /* set FireBase  USERS.(currentUserEmailField).shareLocation state to false */
         Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":false])
+        /* locationManager stop updating location*/
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
     }
 
     /*

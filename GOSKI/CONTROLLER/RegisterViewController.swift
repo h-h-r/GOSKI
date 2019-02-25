@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
                     let usersDB = Database.database().reference().child("USERS")
                     let userEmail = Auth.auth().currentUser!.email!
                     let emailField = (userEmail.prefix(userEmail.count-4))
-                    let userDict :[String : Any] = ["emailField":emailField,"nickName": emailField, "shareLocation":false]
+                    let userDict :[String : Any] = ["emailField":emailField,"nickName": emailField,"friendList":[], "shareLocation":false,"location":[]]
                     usersDB.child("\(emailField)").setValue(userDict, withCompletionBlock: { (Error, DatabaseReference) in
                         if Error != nil {
                             print("eeeeeeeerror",Error!)

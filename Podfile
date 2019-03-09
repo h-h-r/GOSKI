@@ -10,6 +10,7 @@ target 'GOSKI' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
+  pod 'SwipeCellKit'
 
   #Pods for Google Maps
   source 'https://github.com/CocoaPods/Specs.git'

@@ -237,7 +237,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="mW0-7g-Yfh" kind="show" id="ZXK-va-5zd"/>
+                                            <segue destination="mW0-7g-Yfh" kind="show" id="Eaj-yQ-5lA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -301,26 +301,52 @@
         <!--FindFriends-->
         <scene sceneID="ur5-jq-ghv">
             <objects>
-                <viewController title="FindFriends" id="mW0-7g-Yfh" customClass="FindFriendsViewController" customModule="GOSKI" sceneMemberID="viewController">
+                <viewController id="mW0-7g-Yfh" customClass="FindFriendsViewController" customModule="GOSKI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fek-Py-vsC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rhb-wj-PZ4">
-                                <rect key="frame" x="0.0" y="88" width="375" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="YUk-cL-vuh"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="88" width="375" height="345"/>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rPC-PG-YuE">
+                                <rect key="frame" x="0.0" y="433" width="375" height="345"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="GLf-rZ-cwl">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLf-rZ-cwl" id="Xwr-PY-z3O">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="w2j-5j-5WB" firstAttribute="trailing" secondItem="rPC-PG-YuE" secondAttribute="trailing" id="Ab6-fH-41g"/>
+                            <constraint firstItem="rPC-PG-YuE" firstAttribute="height" secondItem="Rhb-wj-PZ4" secondAttribute="height" id="N8w-bO-LfT"/>
                             <constraint firstItem="Rhb-wj-PZ4" firstAttribute="top" secondItem="w2j-5j-5WB" secondAttribute="top" id="NHW-tv-20R"/>
                             <constraint firstItem="w2j-5j-5WB" firstAttribute="trailing" secondItem="Rhb-wj-PZ4" secondAttribute="trailing" id="TQ4-JV-9z1"/>
+                            <constraint firstItem="rPC-PG-YuE" firstAttribute="top" secondItem="Rhb-wj-PZ4" secondAttribute="bottom" id="U8i-HI-1ks"/>
+                            <constraint firstItem="rPC-PG-YuE" firstAttribute="leading" secondItem="w2j-5j-5WB" secondAttribute="leading" id="bIJ-qA-toR"/>
                             <constraint firstItem="Rhb-wj-PZ4" firstAttribute="leading" secondItem="w2j-5j-5WB" secondAttribute="leading" id="fo0-Fa-HXR"/>
+                            <constraint firstItem="w2j-5j-5WB" firstAttribute="bottom" secondItem="rPC-PG-YuE" secondAttribute="bottom" id="vgi-6w-dgm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w2j-5j-5WB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="FindFriends" id="KdI-jx-XyP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ev2-as-npz">
+                            <connections>
+                                <action selector="addFriendButtonPressed:" destination="mW0-7g-Yfh" id="AKy-OY-yjc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myMap" destination="Rhb-wj-PZ4" id="k1F-9o-Tqq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yu4-Yj-bWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

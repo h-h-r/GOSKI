@@ -10,58 +10,109 @@ import UIKit
 import Firebase
 import CoreLocation
 import MapKit
+import SwipeCellKit
 
 
-class FindFriendsViewController: UIViewController,CLLocationManagerDelegate {
-
+class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,SwipeTableViewCellDelegate,UITableViewDataSource {
+    
+    
+    
     var userEmail = ""
     var locationManager = CLLocationManager()
     @IBOutlet weak var myMap: MKMapView!
     var mapAlreadyCentered = false
     var requests = [String]()
     
-   
+    @IBOutlet weak var friendTableView: UITableView!
+    var friends = [String]()
     
-    //    var latitude :
-//    var longitude :
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
         /* update USERS.shareLocation state to true */
         userEmail = Auth.auth().currentUser!.email!
-//        print(userEmail)
-//        print(userEmail.prefix(userEmail.count-4))
         Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":true])
-        
-        retrieveFriendRequests()
-        
         /*myMap*/
         self.myMap.showsUserLocation = true
-        
-        
         /*setup coreLocationManager */
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
         locationManager.startUpdatingLocation()
+        /*get friends from DB*/
+        retrieveFriends()
+        /*retrieve friends requests*/
+        retrieveFriendRequests()
+    }
 
-        //read data from firebase!
-//        let ref = Database.database().reference().child("USERS").child("h@h").child("friendList")
-//        ref.observeSingleEvent(of: .value) { (DataSnapshot) in
-//            print("============")
-//            if let friendList = DataSnapshot.value as? [String]{
-//                print(friendList)
-//                print(friendList[0])
-//
-//            }
-//        }
+//=========================================================================================
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+            let removeEmail = self.friends[indexPath.row]
+            self.friends.remove(at: indexPath.row)
+             Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friends").child("\(removeEmail.prefix(self.userEmail.count-4))").removeValue()
+            Database.database().reference().child("USERS").child("\(removeEmail.prefix(self.userEmail.count-4))").child("friends").child("\(self.userEmail.prefix(self.userEmail.count-4))").removeValue()
+            print(removeEmail)
+//            self.friendTableView.reloadData()
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete-icon")
+        
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.friendTableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
+        cell.textLabel?.text = self.friends[indexPath.row]
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("friends count: ",self.friends.count)
+        return self.friends.count
+        //        return 1
         
     }
     
+    func configureTableView(){
+        self.friendTableView.rowHeight = UITableView.automaticDimension
+        self.friendTableView.estimatedRowHeight = 120.0
+    }
+    
+    func retrieveFriends() {
+        let friendsDB = Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("friends")
+        friendsDB.observe(.childAdded) { (DataSnapshot) in
+            let snapShotValue = DataSnapshot.value as! String
+            print(snapShotValue)
+            if self.friends.contains(snapShotValue) == false{
+//                print("should add:", snapShotValue)
+                self.friends.append(snapShotValue)
+                self.friends.sort()
+//                print(self.friends)
+            }
+            
+            self.configureTableView()
+            self.friendTableView.reloadData()
+        }
+        
+        
+    }
+//=========================================================================================
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
         if location.horizontalAccuracy > 0{
@@ -160,7 +211,9 @@ class FindFriendsViewController: UIViewController,CLLocationManagerDelegate {
         
         
     }
+
     
+    //=========================================================================================
     func retrieveFriendRequests(){
         let friendRequestsDB = Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("friendRequestsList")
         
@@ -223,3 +276,4 @@ class FindFriendsViewController: UIViewController,CLLocationManagerDelegate {
     
     
 }
+

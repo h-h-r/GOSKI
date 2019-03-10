@@ -27,10 +27,6 @@ class HomeViewController: UIViewController {
 
     }
 
-
-    @IBAction func findFriendsButtonPressed(_ sender: UIButton) {
-//        performSegue(withIdentifier: "goToFindFriendsScene", sender: self)
-    }
     
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {

@@ -313,7 +313,7 @@
                                 <rect key="frame" x="0.0" y="433" width="375" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="GLf-rZ-cwl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="friendCell" id="GLf-rZ-cwl" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLf-rZ-cwl" id="Xwr-PY-z3O">
@@ -322,6 +322,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mW0-7g-Yfh" id="kTY-PX-f2o"/>
+                                    <outlet property="delegate" destination="mW0-7g-Yfh" id="0IB-uw-V44"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -345,12 +349,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="friendTableView" destination="rPC-PG-YuE" id="h8d-jF-1Lr"/>
                         <outlet property="myMap" destination="Rhb-wj-PZ4" id="k1F-9o-Tqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yu4-Yj-bWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1138.4000000000001" y="1424.6305418719212"/>
+            <point key="canvasLocation" x="-1148" y="1418"/>
         </scene>
         <!--Log In-->
         <scene sceneID="QAZ-ti-9zk">

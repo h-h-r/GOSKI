@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Initialise and Configure your Firebase
         FirebaseApp.configure()
-        GMSServices.provideAPIKey("AIzaSyBW5tKbCE5fjbWBKde2menPdnCYkTQLq1E")
+        GMSServices.provideAPIKey("AIzaSyBEGuIqaHs6rxxZ2G9qqFJO0eGJVTp54t0")
         return true
     }
 

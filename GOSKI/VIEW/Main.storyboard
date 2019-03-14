@@ -227,7 +227,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="SUO-Ai-yTP" kind="show" id="7Hr-uZ-68g"/>
+                                            <segue destination="SUO-Ai-yTP" kind="show" id="dSG-d1-pLR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB1-sr-Fia">
@@ -276,7 +276,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="N3J-WF-EYP" id="k8I-B0-0Iz"/>
-                        <outlet property="findFriendButton" destination="XB1-sr-Fia" id="aoc-eA-tZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20J-kw-L3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,10 +292,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2YJ-kL-zWO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5bS-X9-tQV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBk-Yo-U4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="683"/>
+            <point key="canvasLocation" x="206" y="1425"/>
         </scene>
         <!--FindFriend-->
         <scene sceneID="ur5-jq-ghv">
@@ -413,7 +413,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ha5-9Q-Znb"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hKg-IN-vPd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPl-Jh-gXc" userLabel="First Responder" sceneMemberID="firstResponder"/>

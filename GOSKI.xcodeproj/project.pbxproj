@@ -10,7 +10,8 @@
 		3A9E63BA0447278CEED735F6 /* Pods_GOSKI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */; };
 		74D688D3221F737E00172D18 /* MountainFinderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D688D2221F737E00172D18 /* MountainFinderController.swift */; };
 		74D688D5221F739800172D18 /* skiMountainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D688D4221F739800172D18 /* skiMountainData.swift */; };
-		74D688DC221F75E000172D18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74D688DB221F75E000172D18 /* GoogleService-Info.plist */; };
+		CC0509772223C71B00BE5709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC0509762223C71B00BE5709 /* GoogleService-Info.plist */; };
+		CC05097D2223C96D00BE5709 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05097C2223C96D00BE5709 /* FindFriendsViewController.swift */; };
 		CCEE2007221D100600144A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2006221D100600144A54 /* Assets.xcassets */; };
 		CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2014221D11C100144A54 /* AppDelegate.swift */; };
 		CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2015221D11C100144A54 /* HomeViewController.swift */; };
@@ -28,8 +29,9 @@
 		74D688D2221F737E00172D18 /* MountainFinderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainFinderController.swift; sourceTree = "<group>"; };
 		74D688D4221F739800172D18 /* skiMountainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skiMountainData.swift; sourceTree = "<group>"; };
 		74D688D6221F73B200172D18 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
-		74D688DB221F75E000172D18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOSKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0509762223C71B00BE5709 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../googleplistGOSKI/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC05097C2223C96D00BE5709 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		CCEE1FFC221D100500144A54 /* GOSKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOSKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEE2006221D100600144A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEE200B221D100600144A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				CCEE2018221D11C100144A54 /* RegisterViewController.swift */,
 				CCEE2017221D11C100144A54 /* WelcomeViewController.swift */,
 				74D688D2221F737E00172D18 /* MountainFinderController.swift */,
+				CC05097C2223C96D00BE5709 /* FindFriendsViewController.swift */,
 			);
 			path = CONTROLLER;
 			sourceTree = "<group>";
@@ -144,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				CCEE200B221D100600144A54 /* Info.plist */,
-				74D688DB221F75E000172D18 /* GoogleService-Info.plist */,
+				CC0509762223C71B00BE5709 /* GoogleService-Info.plist */,
 				74D688D6221F73B200172D18 /* Location.gpx */,
 			);
 			path = "SUPPORTING FILES";
@@ -212,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCEE2021221D11EB00144A54 /* Main.storyboard in Resources */,
-				74D688DC221F75E000172D18 /* GoogleService-Info.plist in Resources */,
+				CC0509772223C71B00BE5709 /* GoogleService-Info.plist in Resources */,
 				CCEE2020221D11EB00144A54 /* LaunchScreen.storyboard in Resources */,
 				CCEE2007221D100600144A54 /* Assets.xcassets in Resources */,
 			);
@@ -257,6 +260,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -267,6 +271,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -309,6 +314,7 @@
 				CCEE201C221D11C100144A54 /* WelcomeViewController.swift in Sources */,
 				CCEE201B221D11C100144A54 /* LogInViewController.swift in Sources */,
 				74D688D5221F739800172D18 /* skiMountainData.swift in Sources */,
+				CC05097D2223C96D00BE5709 /* FindFriendsViewController.swift in Sources */,
 				74D688D3221F737E00172D18 /* MountainFinderController.swift in Sources */,
 				CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */,
 			);

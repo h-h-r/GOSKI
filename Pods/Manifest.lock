@@ -1,41 +1,41 @@
 PODS:
-  - Firebase/Auth (5.17.0):
+  - Firebase/Auth (5.18.0):
     - Firebase/CoreOnly
-    - FirebaseAuth (= 5.3.1)
-  - Firebase/Core (5.17.0):
+    - FirebaseAuth (= 5.4.0)
+  - Firebase/Core (5.18.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 5.6.0)
-  - Firebase/CoreOnly (5.17.0):
-    - FirebaseCore (= 5.3.0)
-  - Firebase/Database (5.17.0):
+    - FirebaseAnalytics (= 5.7.0)
+  - Firebase/CoreOnly (5.18.0):
+    - FirebaseCore (= 5.3.1)
+  - Firebase/Database (5.18.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.1.0)
-  - FirebaseAnalytics (5.6.0):
+  - FirebaseAnalytics (5.7.0):
     - FirebaseCore (~> 5.3)
-    - FirebaseInstanceID (~> 3.5)
-    - GoogleAppMeasurement (= 5.6.0)
+    - FirebaseInstanceID (~> 3.6)
+    - GoogleAppMeasurement (= 5.7.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
-  - FirebaseAuth (5.3.1):
+  - FirebaseAuth (5.4.0):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (5.3.0):
+  - FirebaseCore (5.3.1):
     - GoogleUtilities/Logger (~> 5.2)
   - FirebaseDatabase (5.1.0):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (3.5.0):
-    - FirebaseCore (~> 5.3)
-    - GoogleUtilities/Environment (~> 5.3)
-    - GoogleUtilities/UserDefaults (~> 5.3)
-  - GoogleAppMeasurement (5.6.0):
+  - FirebaseInstanceID (3.7.0):
+    - FirebaseCore (~> 5.2)
+    - GoogleUtilities/Environment (~> 5.2)
+    - GoogleUtilities/UserDefaults (~> 5.2)
+  - GoogleAppMeasurement (5.7.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
@@ -74,6 +74,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - SVProgressHUD (2.2.5)
+  - SwipeCellKit (2.5.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - SVProgressHUD
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -100,16 +102,17 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - SVProgressHUD
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
-  Firebase: 59d557e064217fab6a03ff00baa73c06e73832e6
-  FirebaseAnalytics: 75e4bbc6417d190cc98ec1f17c41a4fad4c2c976
-  FirebaseAuth: 0f61e1329237da5682c49c9abd135e8f9d07a151
+  Firebase: 02f3281965c075426141a0ce1277e9de6649cab9
+  FirebaseAnalytics: 23851fe602c872130a2c5c55040b302120346cc2
+  FirebaseAuth: d85d052354447f30b4b2a805ab91b511458b56a6
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: c0c4befb82374d6aef64d800e569f47625352edc
+  FirebaseCore: 52f851b30e11360f1e67cf04b1edfebf0a47a2d3
   FirebaseDatabase: 23acb0c53cd4d4070a427b60100b2e4aaa97c45d
-  FirebaseInstanceID: 4522aad88f69297622062c0e9ffccdee3dd9b151
-  GoogleAppMeasurement: 008e04ecd8efedd97a693aea8634aefe220bd26e
+  FirebaseInstanceID: bd6fc5a258884e206fd5c474ebe4f5b00e21770e
+  GoogleAppMeasurement: 6cf307834da065863f9faf4c0de0a936d81dd832
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
@@ -117,7 +120,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
 
-PODFILE CHECKSUM: 4933e790b6885e972e870d597265f9ffbae62219
+PODFILE CHECKSUM: c2ce216c7fb52a160ba62a501acfd4de7213355d
 
 COCOAPODS: 1.5.3

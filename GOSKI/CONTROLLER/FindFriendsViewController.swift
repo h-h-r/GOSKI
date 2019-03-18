@@ -24,7 +24,7 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
     var requests = [String]()
     
     @IBOutlet weak var friendTableView: UITableView!
-    var friends = [String]()
+    var friends = [FriendItem]()
     
     
     override func viewDidLoad() {
@@ -45,20 +45,20 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
         /*retrieve friends requests*/
         retrieveFriendRequests()
     }
-
-//=========================================================================================
-
+    
+    //=========================================================================================
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
-            let removeEmail = self.friends[indexPath.row]
+            let removeEmail = self.friends[indexPath.row].friendEmail
             self.friends.remove(at: indexPath.row)
-             Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friends").child("\(removeEmail.prefix(self.userEmail.count-4))").removeValue()
+            Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friends").child("\(removeEmail.prefix(self.userEmail.count-4))").removeValue()
             Database.database().reference().child("USERS").child("\(removeEmail.prefix(self.userEmail.count-4))").child("friends").child("\(self.userEmail.prefix(self.userEmail.count-4))").removeValue()
             print(removeEmail)
-//            self.friendTableView.reloadData()
+            //            self.friendTableView.reloadData()
         }
         
         // customize the action appearance
@@ -77,7 +77,7 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.friendTableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! SwipeTableViewCell
         cell.delegate = self
-        cell.textLabel?.text = self.friends[indexPath.row]
+        cell.textLabel?.text = self.friends[indexPath.row].friendEmail
         return cell
     }
     
@@ -99,11 +99,16 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
         friendsDB.observe(.childAdded) { (DataSnapshot) in
             let snapShotValue = DataSnapshot.value as! String
             print(snapShotValue)
-            if self.friends.contains(snapShotValue) == false{
-//                print("should add:", snapShotValue)
-                self.friends.append(snapShotValue)
-                self.friends.sort()
-//                print(self.friends)
+            //            if self.friends.contains(snapShotValue) == false{
+            ////                print("should add:", snapShotValue)
+            //                self.friends.append(snapShotValue)
+            //                self.friends.sort()
+            ////                print(self.friends)
+            //            }
+            if !self.friends.contains(where: {$0.friendEmail == snapShotValue}){
+                let tmpFriendItem = FriendItem()
+                tmpFriendItem.friendEmail = snapShotValue
+                self.friends.append(tmpFriendItem)
             }
             
             self.configureTableView()
@@ -112,11 +117,11 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
         
         
     }
-//=========================================================================================
+    //=========================================================================================
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
         if location.horizontalAccuracy > 0{
-//            print("longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+            //            print("longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
             Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["location":["longitude":location.coordinate.longitude,"latitude":location.coordinate.latitude]])
             
             if self.mapAlreadyCentered == false{
@@ -132,17 +137,17 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        userEmail = Auth.auth().currentUser!.email!
-//        print(userEmail)
-//        print(userEmail.prefix(userEmail.count-4))
+        //        userEmail = Auth.auth().currentUser!.email!
+        //        print(userEmail)
+        //        print(userEmail.prefix(userEmail.count-4))
         /* set FireBase  USERS.(currentUserEmailField).shareLocation state to false */
         Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":false])
         /* locationManager stop updating location*/
         locationManager.stopUpdatingLocation()
         locationManager.delegate = nil
     }
-
-   
+    
+    
     @IBAction func addFriendButtonPressed(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Send a friend request", message: "", preferredStyle: UIAlertController.Style.alert)
         alertController.addTextField { (UITextField) in
@@ -150,7 +155,7 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
         }
         let saveAction = UIAlertAction(title: "Add", style: UIAlertAction.Style.default) { (UIAlertAction) in
             let friendEmail = alertController.textFields![0].text!
-//            print(friendEmail)
+            //            print(friendEmail)
             self.sendFriendRequest(email: friendEmail)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
@@ -174,64 +179,64 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
                 print("yes!!!")
                 let friendEmail = String(email.prefix(email.count-4))
                 print("\(friendEmail)")
-//                Database.database().reference().child("\(friendEmail)").setValue("hhhhhhr")
+                //                Database.database().reference().child("\(friendEmail)").setValue("hhhhhhr")
                 
                 let friendRequestDB = Database.database().reference().child("USERS").child(friendEmail).child("friendRequestsList")
-//                friendRequestDB.setValue(self.userEmail.prefix(self.userEmail.count-4))
+                //                friendRequestDB.setValue(self.userEmail.prefix(self.userEmail.count-4))
                 print("myemail: \(self.userEmail)")
-//                friendRequestDB.updateChildValues(["test":self.userEmail])
-//                self.userEmail.prefix(self.userEmail.count-4)
+                //                friendRequestDB.updateChildValues(["test":self.userEmail])
+                //                self.userEmail.prefix(self.userEmail.count-4)
                 friendRequestDB.child("\(self.userEmail.prefix(self.userEmail.count-4))").setValue(self.userEmail)
-//                friendRequestDB.childByAutoId().setValue(self.userEmail.prefix(self.userEmail.count-4))
-//                friendRequestDB.setValue([self.userEmail.prefix(self.userEmail.count-4)] , withCompletionBlock: { (Error, DatabaseReference) in
-//                    if Error != nil {
-//                        print("eeeeeeeerror",Error!)
-//                    }else{
-//                        print("new request saved in db successfully!")
-//
-//                    }
-//                })
+                //                friendRequestDB.childByAutoId().setValue(self.userEmail.prefix(self.userEmail.count-4))
+                //                friendRequestDB.setValue([self.userEmail.prefix(self.userEmail.count-4)] , withCompletionBlock: { (Error, DatabaseReference) in
+                //                    if Error != nil {
+                //                        print("eeeeeeeerror",Error!)
+                //                    }else{
+                //                        print("new request saved in db successfully!")
+                //
+                //                    }
+                //                })
                 
                 
-//                read data from firebase!
-//                let ref = Database.database().reference().child("USERS").child(friendEmail).child("friendRequestsList")
-//                ref.observeSingleEvent(of: .value) { (DataSnapshot) in
-//                print("============")
-//                    if let friendRequest = DataSnapshot.value as? [String]{
-//                        print("!!!!!")
-//                        print(friendRequest)
-//                        print(friendRequest[0])
-//                        print(friendRequest[1])
-//
-//                    }
-//                }
-            
+                //                read data from firebase!
+                //                let ref = Database.database().reference().child("USERS").child(friendEmail).child("friendRequestsList")
+                //                ref.observeSingleEvent(of: .value) { (DataSnapshot) in
+                //                print("============")
+                //                    if let friendRequest = DataSnapshot.value as? [String]{
+                //                        print("!!!!!")
+                //                        print(friendRequest)
+                //                        print(friendRequest[0])
+                //                        print(friendRequest[1])
+                //
+                //                    }
+                //                }
+                
             }
         })
         
         
     }
-
+    
     
     //=========================================================================================
     func retrieveFriendRequests(){
         let friendRequestsDB = Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("friendRequestsList")
         
         friendRequestsDB.observe(.childAdded, with: { (snapshot) in
-//            let snapShotValue = snapshot.value as! Dictionary<String,String>
-//            let text = snapShotValue["messageBody"]!
-//            let sender = snapShotValue["sender"]!
-//                        print(text,sender)
-//            let message = Message()
-//            message.messageBody = text
-//            message.sender = sender
-//            self.messageArray.append(message)
-//            self.configureTableView()
-//            self.messageTableView.reloadData()
+            //            let snapShotValue = snapshot.value as! Dictionary<String,String>
+            //            let text = snapShotValue["messageBody"]!
+            //            let sender = snapShotValue["sender"]!
+            //                        print(text,sender)
+            //            let message = Message()
+            //            message.messageBody = text
+            //            message.sender = sender
+            //            self.messageArray.append(message)
+            //            self.configureTableView()
+            //            self.messageTableView.reloadData()
             let friendRequestEmail = snapshot.value as? String
             
             if friendRequestEmail != nil {
-//                friendRequestsDB.child("\(friendRequestEmail!.prefix(friendRequestEmail!.count-4))").removeValue()
+                //                friendRequestsDB.child("\(friendRequestEmail!.prefix(friendRequestEmail!.count-4))").removeValue()
                 self.requests.append(friendRequestEmail!)
                 self.displayRequests()
                 
@@ -239,11 +244,11 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
             
             
         })
-
+        
     }
     
     func displayRequests(){
-
+        
         if self.requests.count > 0 {
             //            create an alert for request
             let alertController = UIAlertController(title: "Friend request", message: "\(self.requests[0])", preferredStyle: UIAlertController.Style.alert)
@@ -260,8 +265,8 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
                 self.displayRequests()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
-                                            (action : UIAlertAction!) -> Void in
-               
+                (action : UIAlertAction!) -> Void in
+                
                 Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friendRequestsList").child("\(self.requests.first!.prefix(self.requests.first!.count-4))").removeValue()
                 self.requests.removeFirst()
                 self.displayRequests()
@@ -271,7 +276,7 @@ class FindFriendsViewController:UIViewController, CLLocationManagerDelegate,Swip
             self.present(alertController, animated: true, completion: nil)
         }
         
-
+        
     }
     
     

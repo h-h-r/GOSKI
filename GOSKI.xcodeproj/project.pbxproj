@@ -12,6 +12,7 @@
 		74D688D5221F739800172D18 /* skiMountainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D688D4221F739800172D18 /* skiMountainData.swift */; };
 		74FCEF05223AD6CF0011A80A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74FCEF04223AD6CF0011A80A /* GoogleService-Info.plist */; };
 		CC05097D2223C96D00BE5709 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05097C2223C96D00BE5709 /* FindFriendsViewController.swift */; };
+		CC2F9CD122400B81008BF501 /* FriendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9CD022400B81008BF501 /* FriendItem.swift */; };
 		CCEE2007221D100600144A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2006221D100600144A54 /* Assets.xcassets */; };
 		CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2014221D11C100144A54 /* AppDelegate.swift */; };
 		CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2015221D11C100144A54 /* HomeViewController.swift */; };
@@ -32,6 +33,7 @@
 		74FCEF04223AD6CF0011A80A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOSKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC05097C2223C96D00BE5709 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
+		CC2F9CD022400B81008BF501 /* FriendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendItem.swift; sourceTree = "<group>"; };
 		CCEE1FFC221D100500144A54 /* GOSKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOSKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEE2006221D100600144A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEE200B221D100600144A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				74D688D4221F739800172D18 /* skiMountainData.swift */,
+				CC2F9CD022400B81008BF501 /* FriendItem.swift */,
 			);
 			path = MODEL;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				CCEE201C221D11C100144A54 /* WelcomeViewController.swift in Sources */,
 				CCEE201B221D11C100144A54 /* LogInViewController.swift in Sources */,
 				74D688D5221F739800172D18 /* skiMountainData.swift in Sources */,
+				CC2F9CD122400B81008BF501 /* FriendItem.swift in Sources */,
 				CC05097D2223C96D00BE5709 /* FindFriendsViewController.swift in Sources */,
 				74D688D3221F737E00172D18 /* MountainFinderController.swift in Sources */,
 				CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */,

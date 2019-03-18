@@ -64,7 +64,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../../../goSki-ios/goSki/SupportingFile/Location.gpx"
+         identifier = "../GOSKI/SUPPORTING FILES/Location.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

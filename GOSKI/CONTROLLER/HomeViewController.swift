@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
         
         super.viewDidLoad()
         if self.isGuest == true{
-            //self.findFriendButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-            //self.findFriendButton.isEnabled = false
+            self.findFriendButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            self.findFriendButton.isEnabled = false
             backButton.title = "< Back"
         }
 

@@ -276,6 +276,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="N3J-WF-EYP" id="k8I-B0-0Iz"/>
+                        <outlet property="findFriendButton" destination="XB1-sr-Fia" id="oBv-yb-W3P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20J-kw-L3s" userLabel="First Responder" sceneMemberID="firstResponder"/>

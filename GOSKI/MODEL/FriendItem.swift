@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-class FriendItem {
-    var friendEmail : String = ""
-    var selected : Bool = false
-    var locationReady = false
-    var location = [Float]()
+class FriendItem : Object {
+    @objc dynamic var friendEmail : String = ""
+    @objc dynamic var selected : Bool = false
+//    var locationReady = false
+//    var location = [Float]()
     
 }

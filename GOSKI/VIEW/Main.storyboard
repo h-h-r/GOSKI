@@ -237,7 +237,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="vyb-Xv-vJJ" kind="show" id="Hur-QN-Yri"/>
+                                            <segue destination="0Du-D5-0Cj" kind="show" identifier="goToMap" id="pcb-aB-JSa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -308,22 +308,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Rj-ZB-kds">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="610"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hn-BE-nbS">
+                                <rect key="frame" x="0.0" y="698" width="375" height="80"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.56897474319999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5TA-Ua-G8T"/>
+                                </constraints>
+                                <state key="normal" title="ShareMyLocation"/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-S1-6XT">
+                                <rect key="frame" x="286" y="722.66666666666663" width="51" height="31"/>
+                                <connections>
+                                    <action selector="shareLocationSwitchTriggered:" destination="0Du-D5-0Cj" eventType="valueChanged" id="NyJ-MS-fpG"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="15m-Ri-iKG" firstAttribute="bottom" secondItem="2Rj-ZB-kds" secondAttribute="bottom" id="Ftb-N6-LMZ"/>
-                            <constraint firstItem="15m-Ri-iKG" firstAttribute="trailing" secondItem="2Rj-ZB-kds" secondAttribute="trailing" id="Xbx-Ic-27n"/>
-                            <constraint firstItem="2Rj-ZB-kds" firstAttribute="leading" secondItem="15m-Ri-iKG" secondAttribute="leading" id="dLG-fd-OeE"/>
-                            <constraint firstItem="2Rj-ZB-kds" firstAttribute="top" secondItem="15m-Ri-iKG" secondAttribute="top" id="rfc-IM-9hU"/>
+                            <constraint firstItem="2Rj-ZB-kds" firstAttribute="trailing" secondItem="15m-Ri-iKG" secondAttribute="trailing" id="32W-yq-fqB"/>
+                            <constraint firstItem="8hn-BE-nbS" firstAttribute="leading" secondItem="15m-Ri-iKG" secondAttribute="leading" id="D7k-3k-4gt"/>
+                            <constraint firstItem="15m-Ri-iKG" firstAttribute="trailing" secondItem="8hn-BE-nbS" secondAttribute="trailing" id="DGj-XP-b3b"/>
+                            <constraint firstItem="2Rj-ZB-kds" firstAttribute="leading" secondItem="15m-Ri-iKG" secondAttribute="leading" id="Exm-LU-PMl"/>
+                            <constraint firstItem="2Rj-ZB-kds" firstAttribute="top" secondItem="15m-Ri-iKG" secondAttribute="top" id="GN6-44-dKU"/>
+                            <constraint firstItem="8hn-BE-nbS" firstAttribute="top" secondItem="2Rj-ZB-kds" secondAttribute="bottom" id="KXP-zu-NmU"/>
+                            <constraint firstItem="15m-Ri-iKG" firstAttribute="trailing" secondItem="8IP-S1-6XT" secondAttribute="trailing" constant="40" id="M4K-2k-MvE"/>
+                            <constraint firstItem="8IP-S1-6XT" firstAttribute="centerY" secondItem="8hn-BE-nbS" secondAttribute="centerY" id="lU4-QT-Vk6"/>
+                            <constraint firstItem="8hn-BE-nbS" firstAttribute="bottom" secondItem="15m-Ri-iKG" secondAttribute="bottom" id="rm3-j5-ajF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="15m-Ri-iKG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="5UK-1z-4yo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="egR-6Q-59S">
+                        <barButtonItem key="rightBarButtonItem" title="Friends" id="egR-6Q-59S">
                             <connections>
-                                <action selector="centerButtonPressed:" destination="0Du-D5-0Cj" id="t7O-0O-yg4"/>
+                                <segue destination="vyb-Xv-vJJ" kind="show" id="FGX-pB-J1t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -333,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8G-4R-fxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1964" y="2147"/>
+            <point key="canvasLocation" x="-1066.4000000000001" y="1381.7733990147783"/>
         </scene>
         <!--Friends-->
         <scene sceneID="9Tb-Jc-bc3">
@@ -358,7 +377,6 @@
                                 <state key="normal" title="⛰️ goToMap ⛰️"/>
                                 <connections>
                                     <action selector="ProceedToMapButton:" destination="vyb-Xv-vJJ" eventType="touchUpInside" id="m8t-2u-IQk"/>
-                                    <segue destination="0Du-D5-0Cj" kind="show" id="bg9-vD-S5j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -387,7 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7B-xY-4wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1964" y="1382"/>
+            <point key="canvasLocation" x="-1841" y="2127"/>
         </scene>
         <!--Friends-->
         <scene sceneID="asT-C3-ztl">
@@ -418,7 +436,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMd-sY-f2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1201" y="1382"/>
+            <point key="canvasLocation" x="-1066" y="2127"/>
         </scene>
         <!--FindFriends-->
         <scene sceneID="ur5-jq-ghv">

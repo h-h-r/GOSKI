@@ -11,26 +11,28 @@ import Firebase
 import SwipeCellKit
 //import RealmSwift
 
-var internalFriendsVariable = [FriendItem]()
-var internalUserEmail = ""
+//var internalFriendsVariable = [FriendItem]()
+//var internalUserEmail = ""
 
 class FriendsTableViewController: SwipeTableTableViewController {
     
 //    let realm = try! Realm()
 //    var friendsrealm : Results<FriendItem>?
     
-    var userEmail = "" {
-        didSet{
-            internalUserEmail = self.userEmail
-        }
-    }
+    var userEmail = ""
+//    {
+//        didSet{
+//            internalUserEmail = self.userEmail
+//        }
+//    }
     var requests = [String]()
-    var friends = [FriendItem](){
-        didSet{
-            internalFriendsVariable = friends
-            print("????????",internalFriendsVariable)
-        }
-    }
+    var friends = [FriendItem]()
+//        {
+//        didSet{
+//            internalFriendsVariable = friends
+//            print("????????",internalFriendsVariable)
+//        }
+//    }
     
     
     override func viewDidLoad() {
@@ -41,7 +43,9 @@ class FriendsTableViewController: SwipeTableTableViewController {
         
         Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":true])
         /*get friends from DB*/
-        retrieveFriends()
+//        retrieveFriends()
+        self.retrieveSelectedProperty()
+        self.friends = internalFriendsVariable
 //        print(<#T##items: Any...##Any#>)
         /*retrieve friends requests*/
         retrieveFriendRequests()
@@ -64,12 +68,25 @@ class FriendsTableViewController: SwipeTableTableViewController {
                 let tmpFriendItem = FriendItem()
                 tmpFriendItem.friendEmail = snapShotValue
                 self.friends.append(tmpFriendItem)
-                
+
             }
-            
+
             self.configureTableView()
             print(self.friends)
             self.tableView.reloadData()
+        }
+    }
+    
+    func retrieveSelectedProperty(){
+        let friendsIWantDB = Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("friendsIWant")
+        friendsIWantDB.observe(.childAdded) { (DataSnapshot) in
+            let snapShotValue = DataSnapshot.value as! String
+            for friendItem in self.friends{
+                if friendItem.friendEmail == snapShotValue{
+                    friendItem.selected = true
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
 
@@ -96,14 +113,16 @@ class FriendsTableViewController: SwipeTableTableViewController {
             let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default) { (UIAlertAction) in
                 let friendEmail = self.requests.first!
                 //add sender to current user's friend list
-                Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friends").child("\(friendEmail.prefix(friendEmail.count-4))").setValue(friendEmail)
+                Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friends").child("\(friendEmail.prefix(friendEmail.count-4))").setValue("\(friendEmail)")
+//                setValue(["email:":"\(friendEmail)","selected:":false])
                 //add current user to senders's friend list
-                Database.database().reference().child("USERS").child("\(friendEmail.prefix(friendEmail.count-4))").child("friends").child("\(self.userEmail.prefix(self.userEmail.count-4))").setValue(self.userEmail)
+                Database.database().reference().child("USERS").child("\(friendEmail.prefix(friendEmail.count-4))").child("friends").child("\(self.userEmail.prefix(self.userEmail.count-4))").setValue("\(self.userEmail)")
+//                    .setValue(["email:":"\(self.userEmail)","selected:":false])
                 //remove sender from current user's request list
                 Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friendRequestsList").child("\(self.requests.first!.prefix(self.requests.first!.count-4))").removeValue()
                 
                 self.requests.removeFirst()
-                self.displayRequests()
+                self.tableView.reloadData()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
                 (action : UIAlertAction!) -> Void in
@@ -168,20 +187,20 @@ class FriendsTableViewController: SwipeTableTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        if let item = todoItems?[indexPath.row]{
-//
-//            do{
-//                try realm.write {
-//                    item.done = !item.done
-//                    //                    realm.delete(item)
-//                }
-//            }catch{
-//                print("error saving data, \(error)")
-//            }
-//        }
         self.friends[indexPath.row].selected = !self.friends[indexPath.row].selected
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
+        let tmpemail = self.friends[indexPath.row].friendEmail
+        if self.friends[indexPath.row].selected == true {
+            
+            Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friendsIWant").child("\(tmpemail.prefix(tmpemail.count-4))").setValue("\(tmpemail)")
+
+        }else{
+            Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friendsIWant").child("\(tmpemail.prefix(tmpemail.count-4))").removeValue()
+
+        }
+        
+        
     }
     
 

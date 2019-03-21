@@ -21,6 +21,7 @@ class FindFriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userEmail = Auth.auth().currentUser!.email!
+        print("======>\n",internalFriendsVariable)
         // Do any additional setup after loading the view.
     }
     
@@ -31,9 +32,9 @@ class FindFriendsViewController: UIViewController {
         
     }
     
-    @IBAction func ProceedToMapButton(_ sender: UIButton) {
-        print(internalFriendsVariable)
-    }
+//    @IBAction func ProceedToMapButton(_ sender: UIButton) {
+//        print(internalFriendsVariable)
+//    }
     
     @IBAction func addFriendButtonPressed(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Send a friend request", message: "", preferredStyle: UIAlertController.Style.alert)

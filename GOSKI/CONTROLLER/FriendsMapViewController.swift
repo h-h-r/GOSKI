@@ -26,6 +26,7 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate {
             print("????????",internalFriendsVariable)
         }
     }
+    var friendsIWant = [String]()
 
     var locationManager = CLLocationManager()
     var userLongitude : CLLocationDegrees = 0
@@ -46,12 +47,65 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate {
         
     }
     
+    
+    func retrieveFriendsIWant(){
+        
+        let friendsIWantDB = Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("friendsIWant")
+//        friendsIWantDB.ob
+        friendsIWantDB.observe(.childAdded) { (DataSnapshot) in
+//        friendsIWantDB.observeSingleEvent(of: .childAdded) { (DataSnapshot) in
+            let snapShotValue = DataSnapshot.value as! String
+            if !self.friendsIWant.contains(snapShotValue){
+                self.friendsIWant.append(snapShotValue)
+                print("@@@@@@ ",snapShotValue,self.friendsIWant)
+                self.retrieveFriendsLocations(fEmail: snapShotValue)
+            }
+            
+        }
+    }
+        func retrieveFriendsLocations( fEmail : String){
+            var friendSharingLocation = false
+    //        for fEmail in self.friendsIWant {
+                let friendDB = Database.database().reference().child("USERS").child("\(fEmail.prefix(fEmail.count-4))")
+                friendDB.child("shareLocation").observe(.value) { (shareLocation) in
+                    print("\(fEmail): shareLocation: ",shareLocation)
+                    friendSharingLocation = shareLocation.value as! Bool
+                    if friendSharingLocation == true {
+                        print("true!!!")
+                        friendDB.child("location").observe(.value) { (location) in
+                            print("\(fEmail)location: ",location)
+                            /* plot this coordinate on the map!!*/
+                        }
+                }
+            
+                
+            }
+            
+    //        }
+    //        let friendDB = Database.database().reference().child("USERS").child("c@c")
+    //        friendDB.child("shareLocation").observe(.value) { (DataSnapshot) in
+    //            print("shareLocation: ",DataSnapshot)
+    //        }
+        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.friendsIWant = [String]()
+        retrieveFriendsIWant()
+//        print("=============================")
+//        for fEmail in self.friendsIWant{
+//            print("femail:",fEmail)
+//            retrieveFriendsLocations(fEmail: fEmail)
+//        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userEmail = Auth.auth().currentUser!.email!
         Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":true])
         /*get friends from DB*/
         retrieveFriends()
+//        retrieveFriendsIWant()
 //        print("friendsmapview:",internalFriendsVariable)
         // Do any additional setup after loading the view.
         /*myMap*/
@@ -64,6 +118,8 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate {
         centerUser()
         prettyPrintFriendItem(friendItems: internalFriendsVariable)
     }
+    
+
     
     //observer
     func retrieveFriends() {

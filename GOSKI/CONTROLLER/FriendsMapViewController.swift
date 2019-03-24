@@ -132,6 +132,7 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("----veiwDidload")

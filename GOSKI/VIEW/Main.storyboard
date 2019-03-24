@@ -374,7 +374,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="uB7-Qt-oTM"/>
                                 </constraints>
-                                <state key="normal" title="⛰️ goToMap ⛰️"/>
+                                <state key="normal" title="button"/>
                                 <connections>
                                     <action selector="ProceedToMapButton:" destination="vyb-Xv-vJJ" eventType="touchUpInside" id="m8t-2u-IQk"/>
                                 </connections>

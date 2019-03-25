@@ -9,10 +9,11 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
+import SVProgressHUD
 
 class MountainFinderController: UIViewController, CLLocationManagerDelegate {
     
-    let mountainModel = skiMountainData()
+    let mountainModel = skiMountainData.sharedInstance
     
     
     var placesClient: GMSPlacesClient?
@@ -34,11 +35,15 @@ class MountainFinderController: UIViewController, CLLocationManagerDelegate {
         view = mapView
         
         //requests authorization to use location
+        print("about to get location")
         locationManager.requestAlwaysAuthorization()
         self.locationManager.delegate = self
-        //locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        print("1")
+        print(locationManager.location!.coordinate.latitude)
+        print("got location")
+        
         //function call to get nearest 20 mountains
         mountainModel.getNearbyMountains(lat: locationManager.location!.coordinate.latitude, long: locationManager.location!.coordinate.longitude)
         //adds a marker for each mountain
@@ -72,8 +77,8 @@ class MountainFinderController: UIViewController, CLLocationManagerDelegate {
         //mapView.clear()
         for currMountain in mountainModel.getSkiMountainData() {
             let mountainMarker = GMSMarker()
-            mountainMarker.position = CLLocationCoordinate2D(latitude: currMountain.getLat(), longitude: currMountain.getLong())
-            mountainMarker.title = currMountain.getName()
+            mountainMarker.position = CLLocationCoordinate2D(latitude: currMountain.lat, longitude: currMountain.long)
+            mountainMarker.title = currMountain.name
             mountainMarker.map = mapView
             mountainMarkers.append(mountainMarker)
         }

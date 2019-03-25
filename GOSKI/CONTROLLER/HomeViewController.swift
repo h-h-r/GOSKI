@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class HomeViewController: UIViewController {
     var isGuest: Bool = false;
@@ -39,6 +40,5 @@ class HomeViewController: UIViewController {
         }catch{
             print("error , a problem signing out")
         }
-    }
-    
+    }    
 }

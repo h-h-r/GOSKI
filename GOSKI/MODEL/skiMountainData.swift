@@ -12,8 +12,15 @@ import CoreLocation
 
 class skiMountainData {
     
+    static var sharedInstance = skiMountainData()
+    
+    private init(){}
+    
+    private (set) var mountainData: [skiMountain] = []
+    
     var placesClient: GMSPlacesClient?
     lazy var mapView = GMSMapView()
+    var mountain: skiMountain!
     var skiMountains: [skiMountain] = []
     var mountainMarkers = [GMSMarker]()
     var userLat: Double?
@@ -22,27 +29,31 @@ class skiMountainData {
     typealias JSONDictionary = [String: Any]
     
     
-    struct skiMountain : Hashable {
-        var name: String
-        var lat: Double
-        var long: Double
-        var address: String
-        var distance: Double
-        
-        var hashValue: Int { return lat.hashValue + long.hashValue }
-        
-        func getString(){ print(name + " at lat: " + String(lat) + " long: " + String(long) + " and is " + String(distance) + " miles away") }
-        func getName() -> String { return name }
-        func getLat() -> Double { return lat }
-        func getLong() -> Double { return long}
-        func getAddress() -> String { return address }
-        func getDistance() -> Double { return distance }
-    }
+//    struct skiMountain : Hashable {
+//        var name: String
+//        var lat: Double
+//        var long: Double
+//        var address: String
+//        var distance: Double
+//
+//        var hashValue: Int { return lat.hashValue + long.hashValue }
+//
+//        func getString(){ print(name + " at lat: " + String(lat) + " long: " + String(long) + " and is " + String(distance) + " miles away") }
+//        func getName() -> String { return name }
+//        func getLat() -> Double { return lat }
+//        func getLong() -> Double { return long}
+//        func getAddress() -> String { return address }
+//        func getDistance() -> Double { return distance }
+//    }
     
     func getSkiMountainData() -> [skiMountain] { return skiMountains }
     
     func setMountainMarkers(markers: [GMSMarker]) {
         mountainMarkers = markers
+    }
+    
+    func requestData(){
+        self.mountainData = skiMountains
     }
     
     func getNearbyMountains(lat: Double, long: Double){
@@ -121,7 +132,7 @@ class skiMountainData {
                 }
             }
             //creates the skiMountain struct and adds it to a list
-            let tempMountain = skiMountain(name: mountainName!, lat: mountainLat!, long: mountainLong!, address: mountainAddress!, distance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!))
+            let tempMountain = skiMountain(mountainName: mountainName!, mountainLat: mountainLat!, mountainLong: mountainLong!, mountainAddress: mountainAddress!, mountainDistance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!))
             skiMountains.append(tempMountain)
         }
         skiMountains.sort { $0.distance < $1.distance }

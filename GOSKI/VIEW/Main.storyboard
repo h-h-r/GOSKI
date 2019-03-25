@@ -287,13 +287,18 @@
         <scene sceneID="EsP-nN-Z5x">
             <objects>
                 <viewController title="FindMountain" id="SUO-Ai-yTP" customClass="MountainFinderController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zq4-bd-qYT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="2YJ-kL-zWO"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="5bS-X9-tQV"/>
+                    <navigationItem key="navigationItem" id="5bS-X9-tQV">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="V3n-3m-0jh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="16P-Z9-jWx">
+                                <rect key="frame" x="250" y="7" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Mountains"/>
+                                <connections>
+                                    <segue destination="G0c-pq-mYq" kind="show" id="mtT-7D-Ynv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBk-Yo-U4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -458,18 +463,98 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hKg-IN-vPd"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bP1-bE-e01"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPl-Jh-gXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1330" y="-849"/>
         </scene>
+        <!--View Mountain List Controller-->
+        <scene sceneID="F5h-GN-cJo">
+            <objects>
+                <viewController id="G0c-pq-mYq" customClass="ViewMountainListController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QQ9-fB-q5S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fYj-wT-4pb">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mountainCell" rowHeight="100" id="wB2-c3-aOt" customClass="mountainCell" customModule="GOSKI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wB2-c3-aOt" id="36G-VX-Ns1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TB2-K9-XAw">
+                                                    <rect key="frame" x="17" y="0.0" width="340" height="59.333333333333336"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MountainName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSH-lF-vhl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="340" height="24.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="### miles away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ai-te-zD1">
+                                                            <rect key="frame" x="0.0" y="24.666666666666671" width="340" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSQ-mP-oB1">
+                                                            <rect key="frame" x="0.0" y="42.666666666666664" width="340" height="16.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="Qyp-wL-gM4"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="TB2-K9-XAw" firstAttribute="leading" secondItem="36G-VX-Ns1" secondAttribute="leading" constant="17" id="nwm-TV-WAV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="distanceAway" destination="6Ai-te-zD1" id="X3h-sd-J7i"/>
+                                            <outlet property="mountainAddress" destination="wSQ-mP-oB1" id="SzN-ZC-jaC"/>
+                                            <outlet property="mountainLabel" destination="DSH-lF-vhl" id="Gdx-EH-QXd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fYj-wT-4pb" firstAttribute="leading" secondItem="QQ9-fB-q5S" secondAttribute="leading" id="B1m-Sf-aqx"/>
+                            <constraint firstItem="fYj-wT-4pb" firstAttribute="top" secondItem="38a-Ld-0NA" secondAttribute="top" id="O09-cQ-rux"/>
+                            <constraint firstAttribute="trailing" secondItem="fYj-wT-4pb" secondAttribute="trailing" id="m7c-Kw-v7Z"/>
+                            <constraint firstAttribute="bottom" secondItem="fYj-wT-4pb" secondAttribute="bottom" id="xUc-l5-XFd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="38a-Ld-0NA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j7t-XE-usJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="fYj-wT-4pb" id="66p-sN-nge"/>
+                        <outlet property="view" destination="QQ9-fB-q5S" id="ns7-Dm-U5V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PdN-s7-wRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="1424.6305418719212"/>
+        </scene>
     </scenes>
     <resources>
         <image name="loginBackground" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HgR-3f-RQR"/>
+        <segue reference="7XR-Ph-5Ps"/>
     </inferredMetricsTieBreakers>
 </document>

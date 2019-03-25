@@ -20,7 +20,6 @@
 		CC2F9CD122400B81008BF501 /* FriendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9CD022400B81008BF501 /* FriendItem.swift */; };
 		CCD2FC5E224163FB00858ABA /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */; };
 		CCD2FC602241668C00858ABA /* SwipeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */; };
-		CCD2FC62224175AC00858ABA /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC61224175AC00858ABA /* FindFriendsViewController.swift */; };
 		CCD2FC6422419AFB00858ABA /* FriendsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC6322419AFB00858ABA /* FriendsMapViewController.swift */; };
 		CCEE2007221D100600144A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2006221D100600144A54 /* Assets.xcassets */; };
 		CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2014221D11C100144A54 /* AppDelegate.swift */; };
@@ -47,7 +46,6 @@
 		CC2F9CD022400B81008BF501 /* FriendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendItem.swift; sourceTree = "<group>"; };
 		CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableTableViewController.swift; sourceTree = "<group>"; };
-		CCD2FC61224175AC00858ABA /* FindFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		CCD2FC6322419AFB00858ABA /* FriendsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsMapViewController.swift; sourceTree = "<group>"; };
 		CCEE1FFC221D100500144A54 /* GOSKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOSKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEE2006221D100600144A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,13 +155,11 @@
 				CCEE2018221D11C100144A54 /* RegisterViewController.swift */,
 				CCEE2017221D11C100144A54 /* WelcomeViewController.swift */,
 				74D688D2221F737E00172D18 /* MountainFinderController.swift */,
-				CC05097C2223C96D00BE5709 /* FindFriendsViewController.swift */,
 				74404C9322486BE6006C4D7F /* ViewMountainListController.swift */,
 				74FAF5BD2248892600760AE1 /* mountainCell.swift */,
 				CC05097C2223C96D00BE5709 /* Find_FriendsViewController.swift */,
 				CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */,
 				CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */,
-				CCD2FC61224175AC00858ABA /* FindFriendsViewController.swift */,
 				CCD2FC6322419AFB00858ABA /* FriendsMapViewController.swift */,
 			);
 			path = CONTROLLER;
@@ -347,13 +343,12 @@
 				CCEE201C221D11C100144A54 /* WelcomeViewController.swift in Sources */,
 				CCEE201B221D11C100144A54 /* LogInViewController.swift in Sources */,
 				74FAF5BE2248892600760AE1 /* mountainCell.swift in Sources */,
-				CCD2FC62224175AC00858ABA /* FindFriendsViewController.swift in Sources */,
 				CCD2FC5E224163FB00858ABA /* FriendsTableViewController.swift in Sources */,
 				74D688D5221F739800172D18 /* skiMountainData.swift in Sources */,
 				CC2F9CD122400B81008BF501 /* FriendItem.swift in Sources */,
 				CC05097D2223C96D00BE5709 /* Find_FriendsViewController.swift in Sources */,
 				74404C9422486BE6006C4D7F /* ViewMountainListController.swift in Sources */,
-				CC05097D2223C96D00BE5709 /* FindFriendsViewController.swift in Sources */,
+				CC05097D2223C96D00BE5709 /* Find_FriendsViewController.swift in Sources */,
 				74D688D3221F737E00172D18 /* MountainFinderController.swift in Sources */,
 				CCEE201A221D11C100144A54 /* HomeViewController.swift in Sources */,
 				74FAF5C022488A9B00760AE1 /* skiMountain.swift in Sources */,

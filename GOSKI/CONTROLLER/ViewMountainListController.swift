@@ -18,8 +18,14 @@ class ViewMountainListController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 120
+        
         self.tableView.reloadData()
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return mountainModel.getSkiMountainData().count

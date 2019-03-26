@@ -171,7 +171,7 @@ class skiMountainData {
             }
         }
         catch{
-            print("*******ERROR**********")
+            print("*******ERROR********** Distance")
         }
         return 0.0;
     }

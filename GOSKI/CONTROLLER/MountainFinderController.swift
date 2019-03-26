@@ -41,7 +41,7 @@ class MountainFinderController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         print("1")
-        print(locationManager.location!.coordinate.latitude)
+        //print(locationManager.location?.coordinate.latitude)
         print("got location")
         
         //function call to get nearest 20 mountains

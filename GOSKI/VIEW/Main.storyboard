@@ -223,7 +223,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPz-87-iEv">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="362"/>
                                         <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
-                                        <state key="normal" title="FindMountain">
+                                        <state key="normal" title="FindMountain &gt;&gt;">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -233,8 +233,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB1-sr-Fia">
                                         <rect key="frame" x="0.0" y="362" width="375" height="362"/>
                                         <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
-                                        <state key="normal" title="findFriend">
+                                        <state key="normal" title="findFriend &gt;&gt;">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="0Du-D5-0Cj" kind="show" identifier="goToMap" id="pcb-aB-JSa"/>
@@ -288,7 +289,7 @@
             <objects>
                 <viewController title="FindMountain" id="SUO-Ai-yTP" customClass="MountainFinderController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5bS-X9-tQV">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="V3n-3m-0jh">
+                        <barButtonItem key="rightBarButtonItem" id="V3n-3m-0jh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="16P-Z9-jWx">
                                 <rect key="frame" x="250" y="7" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

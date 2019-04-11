@@ -217,13 +217,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="mXh-dT-vJE">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Be-v2-Nv6">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Abl-OJ-UbU">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPz-87-iEv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="362"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="172.66666666666666"/>
                                         <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
-                                        <state key="normal" title="FindMountain &gt;&gt;">
+                                        <state key="normal" title="FindMountains &gt;&gt;">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -231,9 +231,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB1-sr-Fia">
-                                        <rect key="frame" x="0.0" y="362" width="375" height="362"/>
+                                        <rect key="frame" x="0.0" y="172.66666666666669" width="375" height="172.33333333333331"/>
                                         <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
-                                        <state key="normal" title="findFriend &gt;&gt;">
+                                        <state key="normal" title="FindFriends &gt;&gt;">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -241,29 +241,48 @@
                                             <segue destination="0Du-D5-0Cj" kind="show" identifier="goToMap" id="pcb-aB-JSa"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lL6-x1-Ohs">
+                                        <rect key="frame" x="0.0" y="345" width="375" height="172.66666666666663"/>
+                                        <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
+                                        <state key="normal" title="Disscussion Forum &gt;&gt;">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNA-3W-08m">
+                                        <rect key="frame" x="0.0" y="517.66666666666663" width="375" height="172.33333333333337"/>
+                                        <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="60"/>
+                                        <state key="normal" title="Tutorials &gt;&gt;">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.74149310670000002" green="1" blue="0.98715795260000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="VPz-87-iEv" firstAttribute="top" secondItem="1Be-v2-Nv6" secondAttribute="top" id="711-hl-N0j"/>
-                                    <constraint firstItem="VPz-87-iEv" firstAttribute="leading" secondItem="1Be-v2-Nv6" secondAttribute="leading" id="8lz-Ng-QFl"/>
-                                    <constraint firstAttribute="trailing" secondItem="VPz-87-iEv" secondAttribute="trailing" id="AHc-F7-PRy"/>
-                                    <constraint firstItem="XB1-sr-Fia" firstAttribute="leading" secondItem="1Be-v2-Nv6" secondAttribute="leading" id="OVT-9s-Kyj"/>
-                                    <constraint firstItem="XB1-sr-Fia" firstAttribute="height" secondItem="VPz-87-iEv" secondAttribute="height" id="bvw-5Y-QEU"/>
-                                    <constraint firstAttribute="trailing" secondItem="XB1-sr-Fia" secondAttribute="trailing" id="sbW-qa-74S"/>
-                                    <constraint firstAttribute="bottom" secondItem="XB1-sr-Fia" secondAttribute="bottom" id="zZD-ZH-EXJ"/>
+                                    <constraint firstItem="VPz-87-iEv" firstAttribute="leading" secondItem="Abl-OJ-UbU" secondAttribute="leading" id="5Tq-DH-7KZ"/>
+                                    <constraint firstItem="lL6-x1-Ohs" firstAttribute="leading" secondItem="Abl-OJ-UbU" secondAttribute="leading" id="6LP-fE-Ubg"/>
+                                    <constraint firstItem="VPz-87-iEv" firstAttribute="top" secondItem="Abl-OJ-UbU" secondAttribute="top" id="8j3-RY-RKG"/>
+                                    <constraint firstItem="NNA-3W-08m" firstAttribute="top" secondItem="lL6-x1-Ohs" secondAttribute="bottom" id="GIv-Dp-p3I"/>
+                                    <constraint firstAttribute="trailing" secondItem="lL6-x1-Ohs" secondAttribute="trailing" id="Sui-cw-O3a"/>
+                                    <constraint firstItem="XB1-sr-Fia" firstAttribute="top" secondItem="VPz-87-iEv" secondAttribute="bottom" id="Y4P-85-5cz"/>
+                                    <constraint firstItem="NNA-3W-08m" firstAttribute="leading" secondItem="Abl-OJ-UbU" secondAttribute="leading" id="ZdH-0o-Jli"/>
+                                    <constraint firstItem="XB1-sr-Fia" firstAttribute="leading" secondItem="Abl-OJ-UbU" secondAttribute="leading" id="dD0-vS-c5F"/>
+                                    <constraint firstAttribute="trailing" secondItem="NNA-3W-08m" secondAttribute="trailing" id="eqk-8g-KXg"/>
+                                    <constraint firstItem="lL6-x1-Ohs" firstAttribute="top" secondItem="XB1-sr-Fia" secondAttribute="bottom" id="fiL-oB-ZtZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="XB1-sr-Fia" secondAttribute="trailing" id="mPo-oM-IVi"/>
+                                    <constraint firstAttribute="bottom" secondItem="NNA-3W-08m" secondAttribute="bottom" id="sqC-JN-Uf2"/>
+                                    <constraint firstAttribute="trailing" secondItem="VPz-87-iEv" secondAttribute="trailing" id="xG0-qN-fhy"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2wP-kN-lmz" firstAttribute="trailing" secondItem="Abl-OJ-UbU" secondAttribute="trailing" id="38j-7m-y5V"/>
                             <constraint firstAttribute="bottom" secondItem="mXh-dT-vJE" secondAttribute="bottom" id="3KV-ic-kKr"/>
                             <constraint firstItem="mXh-dT-vJE" firstAttribute="top" secondItem="2wP-kN-lmz" secondAttribute="top" id="4vJ-vG-foY"/>
-                            <constraint firstItem="1Be-v2-Nv6" firstAttribute="top" secondItem="2wP-kN-lmz" secondAttribute="top" id="8qS-fA-Hbg"/>
                             <constraint firstItem="mXh-dT-vJE" firstAttribute="trailing" secondItem="2wP-kN-lmz" secondAttribute="trailing" id="9cj-T4-Ke3"/>
-                            <constraint firstAttribute="bottom" secondItem="1Be-v2-Nv6" secondAttribute="bottom" id="D1w-D6-0fN"/>
                             <constraint firstItem="mXh-dT-vJE" firstAttribute="leading" secondItem="2wP-kN-lmz" secondAttribute="leading" id="IYP-vK-IQp"/>
-                            <constraint firstItem="1Be-v2-Nv6" firstAttribute="leading" secondItem="2wP-kN-lmz" secondAttribute="leading" id="Ni3-RD-H0T"/>
-                            <constraint firstItem="2wP-kN-lmz" firstAttribute="trailing" secondItem="1Be-v2-Nv6" secondAttribute="trailing" id="QK8-YV-zG1"/>
+                            <constraint firstItem="Abl-OJ-UbU" firstAttribute="leading" secondItem="2wP-kN-lmz" secondAttribute="leading" id="QFA-ep-Rkd"/>
+                            <constraint firstItem="2wP-kN-lmz" firstAttribute="bottom" secondItem="Abl-OJ-UbU" secondAttribute="bottom" id="dhM-sh-ivs"/>
+                            <constraint firstItem="Abl-OJ-UbU" firstAttribute="top" secondItem="2wP-kN-lmz" secondAttribute="top" id="oeK-qp-89b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2wP-kN-lmz"/>
                     </view>

@@ -9,6 +9,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
+import FirebaseDatabase
 
 class skiMountainData {
     
@@ -25,26 +26,9 @@ class skiMountainData {
     var mountainMarkers = [GMSMarker]()
     var userLat: Double?
     var userLong: Double?
+    var ref:DatabaseReference! = Database.database().reference()
     
     typealias JSONDictionary = [String: Any]
-    
-    
-//    struct skiMountain : Hashable {
-//        var name: String
-//        var lat: Double
-//        var long: Double
-//        var address: String
-//        var distance: Double
-//
-//        var hashValue: Int { return lat.hashValue + long.hashValue }
-//
-//        func getString(){ print(name + " at lat: " + String(lat) + " long: " + String(long) + " and is " + String(distance) + " miles away") }
-//        func getName() -> String { return name }
-//        func getLat() -> Double { return lat }
-//        func getLong() -> Double { return long}
-//        func getAddress() -> String { return address }
-//        func getDistance() -> Double { return distance }
-//    }
     
     func getSkiMountainData() -> [skiMountain] { return skiMountains }
     
@@ -57,6 +41,11 @@ class skiMountainData {
     }
     
     func getNearbyMountains(lat: Double, long: Double){
+//        print("Firebase*********")
+//        ref.child("MOUNTAINS").observeSingleEvent(of: .value) { (snapshot) in
+//            let ret = snapshot.value as Any
+//            print(ret)
+//        }
         //creates url string for google places request
         userLat = 42.738070
         userLong = -73.679348
@@ -77,6 +66,7 @@ class skiMountainData {
                         if(key == "results"){
                             //create a skiMountain struct for each returned place
                             createMountains(results: value as! NSArray)
+                            continue
                         }
                     }
                 }
@@ -134,6 +124,7 @@ class skiMountainData {
             //creates the skiMountain struct and adds it to a list
             let tempMountain = skiMountain(mountainName: mountainName!, mountainLat: mountainLat!, mountainLong: mountainLong!, mountainAddress: mountainAddress!, mountainDistance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!))
             skiMountains.append(tempMountain)
+            
         }
         skiMountains.sort { $0.distance < $1.distance }
     }

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class TempFindFriendsViewController: UIViewController {
+class FindFriendsViewController: UIViewController {
 
 
 

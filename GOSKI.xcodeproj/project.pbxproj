@@ -11,12 +11,12 @@
 		74404C9422486BE6006C4D7F /* ViewMountainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74404C9322486BE6006C4D7F /* ViewMountainListController.swift */; };
 		74404C95224874B5006C4D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEE201F221D11EB00144A54 /* Main.storyboard */; };
 		748DC4D72249BB5100D333A6 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748DC4D62249BB5100D333A6 /* FindFriendsViewController.swift */; };
-		748FE1CE2248A1EF002D7A57 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEE200B221D100600144A54 /* Info.plist */; };
 		74D688D3221F737E00172D18 /* MountainFinderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D688D2221F737E00172D18 /* MountainFinderController.swift */; };
 		74D688D5221F739800172D18 /* skiMountainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D688D4221F739800172D18 /* skiMountainData.swift */; };
 		74FAF5BE2248892600760AE1 /* mountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAF5BD2248892600760AE1 /* mountainCell.swift */; };
 		74FAF5C022488A9B00760AE1 /* skiMountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAF5BF22488A9B00760AE1 /* skiMountain.swift */; };
 		74FCEF05223AD6CF0011A80A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74FCEF04223AD6CF0011A80A /* GoogleService-Info.plist */; };
+		74FE7477225EF31100C1D6CA /* SpecificMountainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FE7476225EF31100C1D6CA /* SpecificMountainInfo.swift */; };
 		CC2F9CD122400B81008BF501 /* FriendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9CD022400B81008BF501 /* FriendItem.swift */; };
 		CCD2FC5E224163FB00858ABA /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */; };
 		CCD2FC602241668C00858ABA /* SwipeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */; };
@@ -42,6 +42,7 @@
 		74FAF5BD2248892600760AE1 /* mountainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mountainCell.swift; sourceTree = "<group>"; };
 		74FAF5BF22488A9B00760AE1 /* skiMountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skiMountain.swift; sourceTree = "<group>"; };
 		74FCEF04223AD6CF0011A80A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		74FE7476225EF31100C1D6CA /* SpecificMountainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificMountainInfo.swift; sourceTree = "<group>"; };
 		8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOSKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2F9CD022400B81008BF501 /* FriendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendItem.swift; sourceTree = "<group>"; };
 		CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 				CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */,
 				CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */,
 				CCD2FC6322419AFB00858ABA /* FriendsMapViewController.swift */,
+				74FE7476225EF31100C1D6CA /* SpecificMountainInfo.swift */,
 			);
 			path = CONTROLLER;
 			sourceTree = "<group>";
@@ -239,7 +241,6 @@
 				74FCEF05223AD6CF0011A80A /* GoogleService-Info.plist in Resources */,
 				CCEE2020221D11EB00144A54 /* LaunchScreen.storyboard in Resources */,
 				CCEE2007221D100600144A54 /* Assets.xcassets in Resources */,
-				748FE1CE2248A1EF002D7A57 /* Info.plist in Resources */,
 				74404C95224874B5006C4D7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +339,7 @@
 			files = (
 				CCD2FC6422419AFB00858ABA /* FriendsMapViewController.swift in Sources */,
 				CCD2FC602241668C00858ABA /* SwipeTableTableViewController.swift in Sources */,
+				74FE7477225EF31100C1D6CA /* SpecificMountainInfo.swift in Sources */,
 				CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */,
 				CCEE201D221D11C100144A54 /* RegisterViewController.swift in Sources */,
 				CCEE201C221D11C100144A54 /* WelcomeViewController.swift in Sources */,
@@ -389,7 +391,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Partridge (8UTRU88JJN)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -450,7 +452,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Partridge (8UTRU88JJN)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -480,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JPMUMY4GB5;
+				DEVELOPMENT_TEAM = QF2D2NXN73;
 				INFOPLIST_FILE = "$(SRCROOT)/GOSKI/SUPPORTING FILES/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JPMUMY4GB5;
+				DEVELOPMENT_TEAM = QF2D2NXN73;
 				INFOPLIST_FILE = "$(SRCROOT)/GOSKI/SUPPORTING FILES/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

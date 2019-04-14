@@ -11,7 +11,8 @@ target 'GOSKI' do
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
   pod 'SwipeCellKit'
-  pod 'RealmSwift'
+ pod 'RealmSwift'
+  pod 'ChameleonFramework'
 
   #Pods for Google Maps
   source 'https://github.com/CocoaPods/Specs.git'

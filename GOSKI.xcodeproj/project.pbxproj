@@ -22,6 +22,7 @@
 		CC7519652262DAFB0033B754 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7519642262DAFB0033B754 /* CustomMessageCell.swift */; };
 		CC7519672262DE370033B754 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7519662262DE370033B754 /* ChatViewController.swift */; };
 		CC7519692262DE710033B754 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7519682262DE710033B754 /* Message.swift */; };
+		CC75196C2262FAD40033B754 /* MountainForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75196B2262FAD40033B754 /* MountainForumViewController.swift */; };
 		CCD2FC5E224163FB00858ABA /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */; };
 		CCD2FC602241668C00858ABA /* SwipeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */; };
 		CCD2FC6422419AFB00858ABA /* FriendsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2FC6322419AFB00858ABA /* FriendsMapViewController.swift */; };
@@ -53,6 +54,7 @@
 		CC7519642262DAFB0033B754 /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		CC7519662262DE370033B754 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CC7519682262DE710033B754 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CC75196B2262FAD40033B754 /* MountainForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainForumViewController.swift; sourceTree = "<group>"; };
 		CCD2FC5D224163FB00858ABA /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		CCD2FC5F2241668C00858ABA /* SwipeTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableTableViewController.swift; sourceTree = "<group>"; };
 		CCD2FC6322419AFB00858ABA /* FriendsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsMapViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		CCEE2013221D117B00144A54 /* CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
+				CC75196B2262FAD40033B754 /* MountainForumViewController.swift */,
 				748DC4D62249BB5100D333A6 /* FindFriendsViewController.swift */,
 				CCEE2014221D11C100144A54 /* AppDelegate.swift */,
 				CCEE2015221D11C100144A54 /* HomeViewController.swift */,
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCD2FC6422419AFB00858ABA /* FriendsMapViewController.swift in Sources */,
+				CC75196C2262FAD40033B754 /* MountainForumViewController.swift in Sources */,
 				CCD2FC602241668C00858ABA /* SwipeTableTableViewController.swift in Sources */,
 				74FE7477225EF31100C1D6CA /* SpecificMountainInfo.swift in Sources */,
 				CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */,

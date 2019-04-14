@@ -15,14 +15,22 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var findFriendButton: UIButton!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var disscussionForumButton: UIButton!
     
     override func viewDidLoad() {
        
         
         super.viewDidLoad()
         if self.isGuest == true{
+            let alert = UIAlertController(title: "Guest", message: "Some features are disabled as a guest.", preferredStyle: .alert )
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert,animated: true,completion: nil)
             self.findFriendButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            self.disscussionForumButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             self.findFriendButton.isEnabled = false
+            self.disscussionForumButton.isEnabled = false
             backButton.title = "< Back"
         }
 

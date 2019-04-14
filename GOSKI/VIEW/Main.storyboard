@@ -299,6 +299,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="N3J-WF-EYP" id="k8I-B0-0Iz"/>
+                        <outlet property="disscussionForumButton" destination="lL6-x1-Ohs" id="wld-EL-mvq"/>
                         <outlet property="findFriendButton" destination="XB1-sr-Fia" id="oBv-yb-W3P"/>
                     </connections>
                 </viewController>
@@ -879,6 +880,6 @@
         <image name="loginBackground" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7XR-Ph-5Ps"/>
+        <segue reference="oNH-aL-Foo"/>
     </inferredMetricsTieBreakers>
 </document>

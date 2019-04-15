@@ -14,6 +14,9 @@ class SpecificMountainInfo: UIViewController {
     @IBOutlet weak var MountainName: UILabel!
     @IBOutlet weak var MountainDistance: UILabel!
     @IBOutlet weak var MountainPrice: UIButton!
+    @IBOutlet weak var MountainWeather: UILabel!
+    @IBOutlet weak var MountainTemperature: UILabel!
+    @IBOutlet weak var MountainTrails: UILabel!
     
     let mountainModel = skiMountainData.sharedInstance.getSkiMountainData()
     
@@ -30,8 +33,11 @@ class SpecificMountainInfo: UIViewController {
             MountainPrice.setTitle("Ticket Prices: >>", for: .normal)
         }
         else{
-            MountainPrice.isEnabled = true
-            MountainPrice.setTitle("Ticket Prices: N/A", for: .normal)
+            MountainPrice.isEnabled = false
+            MountainPrice.setTitle("Ticket Prices: Not Available", for: .normal)
         }
+        MountainWeather.text = "Weather: " + mountainModel[myIndex]._weather
+        MountainTemperature.text = "Temperature: " + mountainModel[myIndex]._temperature
+        MountainTrails.text = "Open Trails: " + mountainModel[myIndex]._trails
     }
 }

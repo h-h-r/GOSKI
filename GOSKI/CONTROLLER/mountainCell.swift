@@ -13,6 +13,7 @@ class mountainCell: UITableViewCell {
     @IBOutlet weak var mountainLabel: UILabel!
     @IBOutlet weak var distanceAway: UILabel!
     
+    //creates cell for each mountain
     func configureCell(mountain: skiMountain){
         mountainLabel.text = mountain.name
         let tempDist: Double = Double(round(10*mountain.distance)/10)

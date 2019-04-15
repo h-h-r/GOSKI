@@ -113,7 +113,7 @@ class skiMountainData {
                 }
             }
             //creates the skiMountain struct and adds it to a list
-            let tempMountain = skiMountain(mountainName: mountainName!, mountainLat: mountainLat!, mountainLong: mountainLong!, mountainAddress: mountainAddress!, mountainDistance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!), mountainPrices: ["-1"], mountainTypes: ["-1"])
+            let tempMountain = skiMountain(mountainName: mountainName!, mountainLat: mountainLat!, mountainLong: mountainLong!, mountainAddress: mountainAddress!, mountainDistance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!), mountainPrices: ["-1"], mountainTypes: ["-1"], mountainWeather: "Not Available", mountainTemperature:"Not Available", mountainTrails: "Not Available")
             skiMountains.append(tempMountain)
         }
         
@@ -130,6 +130,18 @@ class skiMountainData {
                     (ret) in
                     obj._ticketTypes = ret
                 })
+                getMountainWeather(name: "Bouquets", onCompletion: {
+                    (ret) in
+                    obj._weather = ret
+                })
+                getMountainTemperature(name: "Bouquets", onCompletion: {
+                    (ret) in
+                    obj._temperature = ret
+                })
+                getMountainTrails(name: "Bouquets", onCompletion: {
+                    (ret) in
+                    obj._trails = ret
+                })
             }
             else if(obj._name == "Willard Mountain"){
                 getTicketPrices(name: "willard", onCompletion: {
@@ -139,6 +151,18 @@ class skiMountainData {
                 getTicketTypes(name: "willard", onCompletion: {
                     (ret) in
                     obj._ticketTypes = ret
+                })
+                getMountainWeather(name: "Willard", onCompletion: {
+                    (ret) in
+                    obj._weather = ret
+                })
+                getMountainTemperature(name: "Willard", onCompletion: {
+                    (ret) in
+                    obj._temperature = ret
+                })
+                getMountainTrails(name: "Willard", onCompletion: {
+                    (ret) in
+                    obj._trails = ret
                 })
             }
             else if(obj._name == "Jiminy Peak Mountain Resort"){
@@ -150,6 +174,18 @@ class skiMountainData {
                     (ret) in
                     obj._ticketTypes = ret
                 })
+                getMountainWeather(name: "Jiminypeak", onCompletion: {
+                    (ret) in
+                    obj._weather = ret
+                })
+                getMountainTemperature(name: "Jiminypeak", onCompletion: {
+                    (ret) in
+                    obj._temperature = ret
+                })
+                getMountainTrails(name: "Jiminypeak", onCompletion: {
+                    (ret) in
+                    obj._trails = ret
+                })
             }
             else if(obj._name == "Prospect Mountain Ski Area"){
                 getTicketPrices(name: "prospect", onCompletion: {
@@ -160,6 +196,18 @@ class skiMountainData {
                     (ret) in
                     obj._ticketTypes = ret
                 })
+                getMountainWeather(name: "Prospect", onCompletion: {
+                    (ret) in
+                    obj._weather = ret
+                })
+                getMountainTemperature(name: "Prospect", onCompletion: {
+                    (ret) in
+                    obj._temperature = ret
+                })
+                getMountainTrails(name: "Prospect", onCompletion: {
+                    (ret) in
+                    obj._trails = ret
+                })
             }
             else if(obj._name == "Pineridge Cross Country Ski Area"){
                 getTicketPrices(name: "pineridgexc", onCompletion: {
@@ -169,6 +217,18 @@ class skiMountainData {
                 getTicketTypes(name: "pineridgexc", onCompletion: {
                     (ret) in
                     obj._ticketTypes = ret
+                })
+                getMountainWeather(name: "Pineridgexc", onCompletion: {
+                    (ret) in
+                    obj._weather = ret
+                })
+                getMountainTemperature(name: "Pineridgexc", onCompletion: {
+                    (ret) in
+                    obj._temperature = ret
+                })
+                getMountainTrails(name: "Pineridgexc", onCompletion: {
+                    (ret) in
+                    obj._trails = ret
                 })
             }
             
@@ -249,6 +309,30 @@ class skiMountainData {
         ref.child("MOUNTAINS").child(name).child("Type").observeSingleEvent(of: .value) { (snapshot) in
             let ret = snapshot.value as! NSArray
             onCompletion(ret)
+        }
+    }
+    
+    //gets list of ticket types firebase
+    func getMountainWeather(name: String, onCompletion: @escaping (String) ->Void) {
+        ref.child("MOUNTAINS").child("skiing_info").child("Weather").child(name).observeSingleEvent(of: .value) { (snapshot) in
+             let ret = snapshot.value as! String
+                onCompletion(ret)
+        }
+    }
+    
+    //gets list of ticket types firebase
+    func getMountainTemperature(name: String, onCompletion: @escaping (String) ->Void) {
+        ref.child("MOUNTAINS").child("skiing_info").child("Temeprature").child(name).observeSingleEvent(of: .value) { (snapshot) in
+            let ret = snapshot.value as! String
+                onCompletion(ret)
+        }
+    }
+    
+    //gets list of ticket types firebase
+    func getMountainTrails(name: String, onCompletion: @escaping (String) ->Void) {
+        ref.child("MOUNTAINS").child("skiing_info").child("Trails").child(name).observeSingleEvent(of: .value) { (snapshot) in
+            let ret = snapshot.value as! String
+                onCompletion(ret)
         }
     }
 }

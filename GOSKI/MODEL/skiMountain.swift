@@ -17,6 +17,9 @@ class skiMountain {
     var _distance: Double!
     var _prices: NSArray!
     var _ticketTypes: NSArray!
+    var _weather: String!
+    var _temperature: String!
+    var _trails: String!
     
     var name: String {
         if _name == nil{
@@ -67,7 +70,28 @@ class skiMountain {
         return _ticketTypes
     }
     
-    init(mountainName: String, mountainLat: Double, mountainLong: Double, mountainAddress: String, mountainDistance: Double, mountainPrices: NSArray, mountainTypes: NSArray){
+    var weather: String{
+        if _weather == nil{
+            _weather = ""
+        }
+        return _weather
+    }
+    
+    var temperature: String{
+        if _temperature == nil{
+            _temperature = ""
+        }
+        return _temperature
+    }
+    
+    var trails: String{
+        if _trails == nil{
+            _trails = ""
+        }
+        return _trails
+    }
+    
+    init(mountainName: String, mountainLat: Double, mountainLong: Double, mountainAddress: String, mountainDistance: Double, mountainPrices: NSArray, mountainTypes: NSArray, mountainWeather: String, mountainTemperature: String, mountainTrails: String){
         self._name = mountainName
         self._lat = mountainLat
         self._long = mountainLong
@@ -75,5 +99,8 @@ class skiMountain {
         self._distance = mountainDistance
         self._prices = mountainPrices
         self._ticketTypes = mountainTypes
+        self._weather = mountainWeather
+        self._temperature = mountainTemperature
+        self._trails = mountainTrails
     }
 }

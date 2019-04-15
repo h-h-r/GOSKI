@@ -19,7 +19,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
        
-        
         super.viewDidLoad()
         if self.isGuest == true{
             let alert = UIAlertController(title: "Guest", message: "Some features are disabled as a guest.", preferredStyle: .alert )
@@ -39,8 +38,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
-        
-        
+
         do{
             try Auth.auth().signOut()
             navigationController?.popToRootViewController(animated: true)

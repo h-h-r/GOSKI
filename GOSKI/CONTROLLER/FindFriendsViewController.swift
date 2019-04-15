@@ -11,12 +11,9 @@ import Firebase
 
 class FindFriendsViewController: UIViewController {
 
-
-
     var userEmail : String = ""
 
     @IBOutlet weak var friendListSubView: UIView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +22,14 @@ class FindFriendsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-
     override func viewWillDisappear(_ animated: Bool) {
-        Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":false])
+        Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":true])
 
     }
 
-//    @IBAction func ProceedToMapButton(_ sender: UIButton) {
-//        print(internalFriendsVariable)
-//    }
+    @IBAction func ProceedToMapButton(_ sender: UIButton) {
+        print(internalFriendsVariable)
+    }
 
     @IBAction func addFriendButtonPressed(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Send a friend request", message: "", preferredStyle: UIAlertController.Style.alert)

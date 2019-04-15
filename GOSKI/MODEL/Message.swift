@@ -8,6 +8,7 @@
 
 import Foundation
 
+/* the information of a single message*/
 class Message {
     var sender = ""
     var messageBody = ""

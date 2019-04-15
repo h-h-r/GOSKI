@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/*used for store the information of a friend*/
 class FriendItem : Object {
     @objc dynamic var friendEmail : String = ""
     @objc dynamic var selected : Bool = false

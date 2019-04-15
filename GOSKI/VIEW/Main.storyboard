@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g6l-bZ-81G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g6l-bZ-81G">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -209,7 +209,6 @@
         <!--Beginner Tutorials-->
         <scene sceneID="rGd-lb-cJO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eLD-zf-q3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="U6C-2H-bka" customClass="BeginnerTutorialController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FJa-3i-ffp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
@@ -332,6 +331,7 @@
                         <outlet property="mainView" destination="w3H-d3-IYX" id="RTz-nA-hJR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLD-zf-q3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5319" y="684"/>
         </scene>
@@ -593,7 +593,6 @@
         <!--Tutorials-->
         <scene sceneID="Qgt-Eh-BXF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7ww-C1-pYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Tutorials" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lAl-UJ-hgn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJp-JX-dCC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -632,6 +631,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tutorials" id="qd6-TS-2DK"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ww-C1-pYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1679" y="683"/>
         </scene>
@@ -835,7 +835,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="uB7-Qt-oTM"/>
                                 </constraints>
-                                <state key="normal" title="button"/>
+                                <state key="normal" title="select the friends you want to see on the map"/>
                                 <connections>
                                     <action selector="ProceedToMapButton:" destination="vyb-Xv-vJJ" eventType="touchUpInside" id="m8t-2u-IQk"/>
                                 </connections>
@@ -1379,6 +1379,6 @@
         <image name="loginBackground" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oNH-aL-Foo"/>
+        <segue reference="HgR-3f-RQR"/>
     </inferredMetricsTieBreakers>
 </document>

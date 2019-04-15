@@ -20,7 +20,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageTableView: UITableView!
     
-    
+    var heightKB = 300 //default height of keyboard
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +48,24 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        }
 //        self.messageTableView.scrollToRow(at: self.messageArray.count-1, at: <#T##UITableView.ScrollPosition#>, animated: <#T##Bool#>)
         
+//        get height of keyboard
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+
+        
     }
     
-    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            self.heightKB = Int(keyboardRectangle.height)
+        }
+        
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +97,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // Declare textFieldDidBeginEditing here:
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.2) {
-            self.heightConstraint.constant = 50 + 258
+//            self.heightConstraint.constant = 50 + 258
+            self.heightConstraint.constant = 50 + CGFloat(self.heightKB)
+
             self.view.layoutIfNeeded()
         }
     }

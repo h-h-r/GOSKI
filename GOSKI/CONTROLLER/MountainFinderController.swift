@@ -15,7 +15,6 @@ class MountainFinderController: UIViewController, CLLocationManagerDelegate {
     
     let mountainModel = skiMountainData.sharedInstance
     
-    
     var placesClient: GMSPlacesClient?
     var locationManager = CLLocationManager()
     var mapView = GMSMapView()

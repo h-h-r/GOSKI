@@ -9,17 +9,26 @@
 import UIKit
 import Firebase
 
+
 class MountainForumViewController: ChatViewController {
 
+    var moutainName = ""
+    let mountainModel = skiMountainData.sharedInstance.getSkiMountainData()
+    
     override func viewDidLoad() {
+        
+        /*find the DB path*/
+        self.moutainName = mountainModel[myIndex]._name
+        self.moutainName = self.moutainName.replacingOccurrences(of: " ", with: "")
+        print(self.moutainName)
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
    override func retrieveMessages(){
-        let messageDB = Database.database().reference().child("FORUM")
-        
+//        let messageDB = Database.database().reference().child("FORUM")
+        let messageDB = Database.database().reference().child("MOUNTAINFORUM").child("\(self.moutainName)")
+
         messageDB.observe(.childAdded) { (snapshot) in
             let snapShotValue = snapshot.value as! Dictionary<String,String>
             let text = snapShotValue["messageBody"]!
@@ -42,7 +51,8 @@ class MountainForumViewController: ChatViewController {
         sendButton.isEnabled = false
         if messageTextField.text!.count > 0{
             
-            let messageDB = Database.database().reference().child("FORUM")
+//            let messageDB = Database.database().reference().child("FORUM")
+            let messageDB = Database.database().reference().child("MOUNTAINFORUM").child("\(self.moutainName)")
             let messageDictionary = ["sender":Auth.auth().currentUser?.email,"messageBody": messageTextField.text!]
             
             messageDB.childByAutoId().setValue(messageDictionary){
@@ -54,7 +64,7 @@ class MountainForumViewController: ChatViewController {
                     self.messageTextField.isEnabled = true
                     self.sendButton.isEnabled = true
                     self.messageTextField.text = ""
-                    //                    self.messageTableView.scrollToRow(at: IndexPath(item: self.messageArray.count-1, section: 0), at: .bottom, animated: true)
+                    //  self.messageTableView.scrollToRow(at: IndexPath(item: self.messageArray.count-1, section: 0), at: .bottom, animated: true)
                 }
             }
         }else{

@@ -8,7 +8,7 @@
 
 import UIKit
 import SwipeCellKit
-
+/* module used for swipable friend item*/
 class SwipeTableTableViewController: UITableViewController, SwipeTableViewCellDelegate {
 
     override func viewDidLoad() {

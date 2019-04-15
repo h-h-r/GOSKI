@@ -13,9 +13,9 @@ import MapKit
 var internalFriendsVariable = [FriendItem]()
 var internalUserEmail = ""
 
+
 class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
     
-
     var userEmail = ""{
         didSet{
             internalUserEmail = self.userEmail
@@ -64,6 +64,7 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
             
         }
     }
+    
     func retrieveFriendsLocations( fEmail : String){
         var friendSharingLocation = false
 //        for fEmail in self.friendsIWant {
@@ -94,27 +95,15 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
                     }
                 } 
             }
-        
-            
         }
-            
-    //        }
-    //        let friendDB = Database.database().reference().child("USERS").child("c@c")
-    //        friendDB.child("shareLocation").observe(.value) { (DataSnapshot) in
-    //            print("shareLocation: ",DataSnapshot)
-    //        }
     }
     
     func plotFriendsOnMap(email:String,longitude:CLLocationDegrees,latitude:CLLocationDegrees){
-//        for friendItem in internalFriendsVariable{
-//            if friendItem.selected == true {
-//                //check whether this selected friend is sharing location
-//            }
-//        }
+
         let tmpAnnot = MKPointAnnotation()
         tmpAnnot.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         tmpAnnot.title = "\(email)"
-//        tmpAnnot
+
         self.myMap.addAnnotation(tmpAnnot)
         
     }
@@ -124,11 +113,6 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
         self.myMap.removeAnnotations(self.myMap.annotations)
         self.friendsIWant = [String]()
         retrieveFriendsIWant()
-//        print("=============================")
-//        for fEmail in self.friendsIWant{
-//            print("femail:",fEmail)
-//            retrieveFriendsLocations(fEmail: fEmail)
-//        }
         
     }
     
@@ -168,13 +152,12 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
                 self.friends.append(tmpFriendItem)
                 
             }
-            
-//            self.configureTableView()
-//            print(self.friends)
-//            self.tableView.reloadData()
+    
         }
     }
    
+    
+    //======== helper function ==========
     func prettyPrintFriendItem(friendItems : [FriendItem]){
         for item in friendItems{
             print("====>friendEmail:",item.friendEmail)
@@ -195,13 +178,6 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
             Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").updateChildValues(["shareLocation":false])
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-////        sup
-//
-//            print("yyyyyyyyes")
-//
-//    }
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -230,9 +206,7 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
         let center = CLLocationCoordinate2D(latitude: self.userLatitude, longitude: self.userLongitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         self.myMap.setRegion(region, animated: true)
-//        let center2 = CLLocationCoordinate2D(latitude: self.userLatitude-3, longitude: self.userLongitude-3)
-//        let region2 = MKCoordinateRegion(center: center2, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-//        self.myMap.setRegion(region2, animated: true)
+
     }
 
     /*
@@ -249,10 +223,3 @@ class FriendsMapViewController: UIViewController,CLLocationManagerDelegate{
 
 
 
-//extension FriendsMapViewController : MKAnnotationView{
-////    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-////        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-////        clusteringIdentifier = "unicycle"
-////    }
-//
-//}

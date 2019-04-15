@@ -9,30 +9,17 @@
 import UIKit
 import Firebase
 import SwipeCellKit
-//import RealmSwift
 
-//var internalFriendsVariable = [FriendItem]()
-//var internalUserEmail = ""
 
 class FriendsTableViewController: SwipeTableTableViewController {
     
-//    let realm = try! Realm()
-//    var friendsrealm : Results<FriendItem>?
+
     
     var userEmail = ""
-//    {
-//        didSet{
-//            internalUserEmail = self.userEmail
-//        }
-//    }
+
     var requests = [String]()
     var friends = [FriendItem]()
-//        {
-//        didSet{
-//            internalFriendsVariable = friends
-//            print("????????",internalFriendsVariable)
-//        }
-//    }
+
     
     
     override func viewDidLoad() {
@@ -50,14 +37,7 @@ class FriendsTableViewController: SwipeTableTableViewController {
         /*retrieve friends requests*/
         retrieveFriendRequests()
     }
-//    func loadFriendItems(){
-//        self.friendsrealm = realm.objects(FriendItem.self)
-//        tableView.reloadData()
-//    }
-    
-//    public func getFriendsItems() -> [FriendItem] {
-//        return self.friends
-//    }
+
     //==================================================
     func retrieveFriends() {
         let friendsDB = Database.database().reference().child("USERS").child("\(userEmail.prefix(userEmail.count-4))").child("friends")
@@ -105,6 +85,7 @@ class FriendsTableViewController: SwipeTableTableViewController {
             
         })
     }
+    
     func displayRequests(){
         
         if self.requests.count > 0 {
@@ -122,6 +103,7 @@ class FriendsTableViewController: SwipeTableTableViewController {
                 Database.database().reference().child("USERS").child("\(self.userEmail.prefix(self.userEmail.count-4))").child("friendRequestsList").child("\(self.requests.first!.prefix(self.requests.first!.count-4))").removeValue()
                 
                 self.requests.removeFirst()
+                self.retrieveFriends()
                 self.tableView.reloadData()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
@@ -138,7 +120,7 @@ class FriendsTableViewController: SwipeTableTableViewController {
         
         
     }
-    //==================================================
+    //==========================table view required methods========================
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
@@ -204,68 +186,5 @@ class FriendsTableViewController: SwipeTableTableViewController {
     }
     
 
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

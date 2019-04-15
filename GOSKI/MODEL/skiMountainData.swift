@@ -41,11 +41,6 @@ class skiMountainData {
     }
     
     func getNearbyMountains(lat: Double, long: Double){
-//        print("Firebase*********")
-//        ref.child("MOUNTAINS").observeSingleEvent(of: .value) { (snapshot) in
-//            let ret = snapshot.value as Any
-//            print(ret)
-//        }
         //creates url string for google places request
         userLat = 42.738070
         userLong = -73.679348
@@ -70,10 +65,6 @@ class skiMountainData {
                         }
                     }
                 }
-                    //rest is error handling should never reach this point
-//                else if let object = json as? [Any]{
-//                    print("not dict")
-//                }
                 else{
                     print("Json is invlaid")
                 }
@@ -122,13 +113,69 @@ class skiMountainData {
                 }
             }
             //creates the skiMountain struct and adds it to a list
-            let tempMountain = skiMountain(mountainName: mountainName!, mountainLat: mountainLat!, mountainLong: mountainLong!, mountainAddress: mountainAddress!, mountainDistance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!))
+            let tempMountain = skiMountain(mountainName: mountainName!, mountainLat: mountainLat!, mountainLong: mountainLong!, mountainAddress: mountainAddress!, mountainDistance: requestDistance(mountainLat: mountainLat!, mountainLong: mountainLong!), mountainPrices: ["-1"], mountainTypes: ["-1"])
             skiMountains.append(tempMountain)
+        }
+        
+        //sorts ski mountains by distrance
+        skiMountains.sort { $0.distance < $1.distance }
+        //gets tiket prices for any mountasins we may have
+        for obj in skiMountains{
+            if(obj._name == "Bousquet Ski Area"){
+                getTicketPrices(name: "bousquets", onCompletion: {
+                    (ret) in
+                    obj._prices = ret
+                })
+                getTicketTypes(name: "bousquets", onCompletion: {
+                    (ret) in
+                    obj._ticketTypes = ret
+                })
+            }
+            else if(obj._name == "Willard Mountain"){
+                getTicketPrices(name: "willard", onCompletion: {
+                    (ret) in
+                    obj._prices = ret
+                })
+                getTicketTypes(name: "willard", onCompletion: {
+                    (ret) in
+                    obj._ticketTypes = ret
+                })
+            }
+            else if(obj._name == "Jiminy Peak Mountain Resort"){
+                getTicketPrices(name: "jiminypeak", onCompletion: {
+                    (ret) in
+                    obj._prices = ret
+                })
+                getTicketTypes(name: "jiminypeak", onCompletion: {
+                    (ret) in
+                    obj._ticketTypes = ret
+                })
+            }
+            else if(obj._name == "Prospect Mountain Ski Area"){
+                getTicketPrices(name: "prospect", onCompletion: {
+                    (ret) in
+                    obj._prices = ret
+                })
+                getTicketTypes(name: "prospect", onCompletion: {
+                    (ret) in
+                    obj._ticketTypes = ret
+                })
+            }
+            else if(obj._name == "Pineridge Cross Country Ski Area"){
+                getTicketPrices(name: "pineridgexc", onCompletion: {
+                    (ret) in
+                    obj._prices = ret
+                })
+                getTicketTypes(name: "pineridgexc", onCompletion: {
+                    (ret) in
+                    obj._ticketTypes = ret
+                })
+            }
             
         }
-        skiMountains.sort { $0.distance < $1.distance }
     }
     
+    //puts in a url request to get distanc between user and a mountain
     func requestDistance(mountainLat: Double, mountainLong: Double) -> Double {
         let mainURL: String = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial"
         let orginsParam: String = "&origins=" + String(format:"%f", userLat!) + "," + String(format:"%f", userLong!)
@@ -149,10 +196,6 @@ class skiMountainData {
                         }
                     }
                 }
-                    //rest is error handling should never reach this point
-//                else if let object = json as? [Any]{
-//                    print("not dict")
-//                }
                 else{
                     print("Json is invlaid")
                 }
@@ -167,6 +210,7 @@ class skiMountainData {
         return 0.0;
     }
     
+    //gets the actual distane and retruns it in miles
     func getDistanceFromUser(results: NSArray) -> Double{
         for item in results{
             let obj = item as! NSDictionary
@@ -190,5 +234,21 @@ class skiMountainData {
             }
         }
         return 0.0
+    }
+    
+    //get list of ticket prices rfom firebase
+    func getTicketPrices(name: String, onCompletion: @escaping (NSArray) ->Void) {
+        ref.child("MOUNTAINS").child(name).child("Price").observeSingleEvent(of: .value) { (snapshot) in
+            let ret = snapshot.value as! NSArray
+            onCompletion(ret)
+        }
+    }
+    
+    //gets list of ticket types firebase
+    func getTicketTypes(name: String, onCompletion: @escaping (NSArray) ->Void) {
+        ref.child("MOUNTAINS").child(name).child("Type").observeSingleEvent(of: .value) { (snapshot) in
+            let ret = snapshot.value as! NSArray
+            onCompletion(ret)
+        }
     }
 }

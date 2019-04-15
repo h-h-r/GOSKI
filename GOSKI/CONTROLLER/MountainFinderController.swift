@@ -21,9 +21,6 @@ class MountainFinderController: UIViewController, CLLocationManagerDelegate {
     var mapView = GMSMapView()
     var currentLocation: CLLocationCoordinate2D!
     var mountainMarkers = [GMSMarker]()
-    //var cameraGMAPS = GMSCameraPosition()
-    
-    typealias JSONDictionary = [String: Any]
     
     override func viewDidLoad() {
         super.viewDidLoad()

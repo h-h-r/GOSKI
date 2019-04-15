@@ -8,12 +8,15 @@
 
 import UIKit
 
+//class to store infomration about each ski mountain
 class skiMountain {
     var _name: String!
     var _lat: Double!
     var _long: Double!
     var _address: String!
     var _distance: Double!
+    var _prices: NSArray!
+    var _ticketTypes: NSArray!
     
     var name: String {
         if _name == nil{
@@ -50,20 +53,27 @@ class skiMountain {
         return _distance
     }
     
-    init(mountainName: String, mountainLat: Double, mountainLong: Double, mountainAddress: String, mountainDistance: Double){
+    var prices: NSArray{
+        if _prices == nil {
+            _prices = NSArray()
+        }
+        return _prices
+    }
+    
+    var ticketTypes: NSArray{
+        if _ticketTypes == nil {
+            _ticketTypes = NSArray()
+        }
+        return _ticketTypes
+    }
+    
+    init(mountainName: String, mountainLat: Double, mountainLong: Double, mountainAddress: String, mountainDistance: Double, mountainPrices: NSArray, mountainTypes: NSArray){
         self._name = mountainName
         self._lat = mountainLat
         self._long = mountainLong
         self._address = mountainAddress
         self._distance = mountainDistance
+        self._prices = mountainPrices
+        self._ticketTypes = mountainTypes
     }
-    
-   // var hashValue: Int { return lat.hashValue + long.hashValue }
-    
-//    func getString(){ print(name + " at lat: " + String(lat) + " long: " + String(long) + " and is " + String(distance) + " miles away") }
-//    func getName() -> String { return name }
-//    func getLat() -> Double { return lat }
-//    func getLong() -> Double { return long}
-//    func getAddress() -> String { return address }
-//    func getDistance() -> Double { return distance }
 }

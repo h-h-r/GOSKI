@@ -32,7 +32,7 @@ class ViewMountainListController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    
+    //gets number of rows in table for displaying mountains
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return mountainModel.getSkiMountainData().count
         if searching{
@@ -43,6 +43,7 @@ class ViewMountainListController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    //configures each individual cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if searching{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "mountainCell", for: indexPath) as? mountainCell {
@@ -70,11 +71,13 @@ class ViewMountainListController: UIViewController, UITableViewDelegate, UITable
         return 1
     }
     
+    //determines what index a user clicked on if they clicked oin a cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
         performSegue(withIdentifier: "mountainSegue", sender: self)
     }
     
+    //searches through list of ski mouintains
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchMountain = mountainModel.filter({$0._name.lowercased().prefix(searchText.count) == searchText.lowercased()})
         searching = true

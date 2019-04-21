@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g6l-bZ-81G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g6l-bZ-81G">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -214,10 +214,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Rl-hh-Rq1">
-                                <rect key="frame" x="0.0" y="88" width="375" height="1412"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Rl-hh-Rq1">
+                                <rect key="frame" x="0.0" y="44" width="375" height="1412"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3H-d3-IYX">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3H-d3-IYX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Snow Plough" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-Ha-5Mo">
@@ -316,24 +316,18 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="9Rl-hh-Rq1" secondAttribute="bottom" id="Ho5-0w-5nN"/>
-                            <constraint firstItem="9Rl-hh-Rq1" firstAttribute="top" secondItem="UNB-c5-AI7" secondAttribute="top" id="PJW-oo-mRY"/>
-                            <constraint firstItem="w3H-d3-IYX" firstAttribute="width" secondItem="FJa-3i-ffp" secondAttribute="width" id="Z5F-Qo-t0B"/>
-                            <constraint firstItem="9Rl-hh-Rq1" firstAttribute="trailing" secondItem="UNB-c5-AI7" secondAttribute="trailing" id="pUT-Kn-ijq"/>
-                            <constraint firstItem="9Rl-hh-Rq1" firstAttribute="leading" secondItem="UNB-c5-AI7" secondAttribute="leading" id="rrK-9h-hBc"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UNB-c5-AI7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Beginner Tutorials" id="5CM-43-TJQ"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="mainView" destination="w3H-d3-IYX" id="RTz-nA-hJR"/>
+                        <outlet property="scrollView" destination="9Rl-hh-Rq1" id="aBS-o1-K3J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLD-zf-q3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5319" y="684"/>
+            <point key="canvasLocation" x="-5319.1999999999998" y="683.49753694581284"/>
         </scene>
         <!--Intermediate Tutorials-->
         <scene sceneID="PWz-Oh-x1p">

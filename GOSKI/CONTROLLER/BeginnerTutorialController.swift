@@ -13,6 +13,7 @@ class BeginnerTutorialController: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var videoView1: WKWebView!
     var videoView2: WKWebView!
     var videoView3: WKWebView!
@@ -40,6 +41,8 @@ class BeginnerTutorialController: UIViewController {
         mainView.addSubview(videoView5)
         
         self.view = mainView
+        //scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: 375, height: 1412)
         
         videoView1.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/tXUbCPuc4nw")!))
         videoView2.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/bEBIAfZ0iW4")!))

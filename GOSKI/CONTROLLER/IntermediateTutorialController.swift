@@ -9,44 +9,45 @@
 import UIKit
 import WebKit
 
-class IntermediateTutorialController: UIViewController {
+class IntermediateTutorialController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var mainView: UIView!
+    let videoTitles: [String] = ["Introduction to Skiing Parallel", "Clutch / Accelerator Exercise", "Rounded Turns to Control Speed", "Turn Shape", "Edging"]
+    let videoURLS: [String] = ["https://www.youtube.com/embed/bAsGPnEYzLE", "https://www.youtube.com/embed/DTkyqZjUMYQ", "https://www.youtube.com/embed/M4_HZfGTunw", "https://www.youtube.com/embed/ya9utfEz6sA", "https://www.youtube.com/embed/SIFDZVFYfJo"]
     
-    var videoView1: WKWebView!
-    var videoView2: WKWebView!
-    var videoView3: WKWebView!
-    var videoView4: WKWebView!
-    var videoView5: WKWebView!
-    var videoView6: WKWebView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        //creates view for each video and adds it to the main view and then embeds the video in it
-        videoView1 = WKWebView(frame: CGRect(x: 8, y: 168, width: 359, height: 202), configuration: WKWebViewConfiguration())
-        mainView.addSubview(videoView1)
+        //self.tableView.rowHeight = UITableView.automaticDimension
+        //self.tableView.estimatedRowHeight = 120
         
-        videoView2 = WKWebView(frame: CGRect(x: 8, y: 421, width: 359, height: 202), configuration: WKWebViewConfiguration())
-        mainView.addSubview(videoView2)
-        
-        videoView3 = WKWebView(frame: CGRect(x: 8, y: 674, width: 359, height: 202), configuration: WKWebViewConfiguration())
-        mainView.addSubview(videoView3)
-        
-        videoView4 = WKWebView(frame: CGRect(x: 8, y: 927, width: 359, height: 202), configuration: WKWebViewConfiguration())
-        mainView.addSubview(videoView4)
-        
-        videoView5 = WKWebView(frame: CGRect(x: 8, y: 1180, width: 359, height: 202), configuration: WKWebViewConfiguration())
-        mainView.addSubview(videoView5)
-        
-        self.view = mainView
-        
-        videoView1.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/bAsGPnEYzLE")!))
-        videoView2.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/DTkyqZjUMYQ")!))
-        videoView3.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/M4_HZfGTunw")!))
-        videoView4.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/ya9utfEz6sA")!))
-        videoView5.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/SIFDZVFYfJo")!))
-        
+        self.tableView.reloadData()
     }
     
+    
+    //gets number of rows in table for displaying mountains
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    //configures each individual cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "tutorialCell", for: indexPath) as? tutorialCell {
+            cell.configureCell(videoName: videoTitles[indexPath.row], videoURL: videoURLS[indexPath.row])
+            //print("Possibly configured***********")
+            return cell
+        }
+        else {
+            print("Failed*******")
+            return tutorialCell()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 }

@@ -10,6 +10,7 @@
 		3A9E63BA0447278CEED735F6 /* Pods_GOSKI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB6A0900B461B2EEAE3D77 /* Pods_GOSKI.framework */; };
 		74404C9422486BE6006C4D7F /* ViewMountainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74404C9322486BE6006C4D7F /* ViewMountainListController.swift */; };
 		74404C95224874B5006C4D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEE201F221D11EB00144A54 /* Main.storyboard */; };
+		747745ED226D00700032DD2B /* tutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747745EC226D00700032DD2B /* tutorialCell.swift */; };
 		748DC4D72249BB5100D333A6 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748DC4D62249BB5100D333A6 /* FindFriendsViewController.swift */; };
 		74C6B4D5226436D100E451CC /* BeginnerTutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B4D4226436D100E451CC /* BeginnerTutorialController.swift */; };
 		74C6B4D722643F1300E451CC /* IntermediateTutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B4D622643F1300E451CC /* IntermediateTutorialController.swift */; };
@@ -44,6 +45,7 @@
 		1AC384E47B8403AC635FACF8 /* Pods-GOSKI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOSKI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI.debug.xcconfig"; sourceTree = "<group>"; };
 		493CFE68DC0CF8DD396A593D /* Pods-GOSKI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOSKI.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOSKI/Pods-GOSKI.release.xcconfig"; sourceTree = "<group>"; };
 		74404C9322486BE6006C4D7F /* ViewMountainListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMountainListController.swift; sourceTree = "<group>"; };
+		747745EC226D00700032DD2B /* tutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tutorialCell.swift; sourceTree = "<group>"; };
 		748DC4D62249BB5100D333A6 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		74C6B4D4226436D100E451CC /* BeginnerTutorialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginnerTutorialController.swift; sourceTree = "<group>"; };
 		74C6B4D622643F1300E451CC /* IntermediateTutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntermediateTutorialController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				74C6B4D82264470700E451CC /* AdvancedTutorialController.swift */,
 				74C6B4DA2264856100E451CC /* MountainTicketPrice.swift */,
 				74C6B4DC2264875600E451CC /* PriceCell.swift */,
+				747745EC226D00700032DD2B /* tutorialCell.swift */,
 			);
 			path = CONTROLLER;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				CCD2FC6422419AFB00858ABA /* FriendsMapViewController.swift in Sources */,
 				CC75196C2262FAD40033B754 /* MountainForumViewController.swift in Sources */,
 				CCD2FC602241668C00858ABA /* SwipeTableTableViewController.swift in Sources */,
+				747745ED226D00700032DD2B /* tutorialCell.swift in Sources */,
 				74FE7477225EF31100C1D6CA /* SpecificMountainInfo.swift in Sources */,
 				CCEE2019221D11C100144A54 /* AppDelegate.swift in Sources */,
 				CCEE201D221D11C100144A54 /* RegisterViewController.swift in Sources */,

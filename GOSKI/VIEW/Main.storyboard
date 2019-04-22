@@ -575,7 +575,7 @@
         <scene sceneID="EsP-nN-Z5x">
             <objects>
                 <viewController title="FindMountain" id="SUO-Ai-yTP" customClass="MountainFinderController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="5bS-X9-tQV">
+                    <navigationItem key="navigationItem" title="Nearby Mountains" id="5bS-X9-tQV">
                         <barButtonItem key="rightBarButtonItem" id="V3n-3m-0jh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="16P-Z9-jWx">
                                 <rect key="frame" x="250" y="7" width="109" height="30"/>
@@ -838,7 +838,7 @@
             </objects>
             <point key="canvasLocation" x="-1330" y="-849"/>
         </scene>
-        <!--View Mountain List Controller-->
+        <!--Nearby Mountains List-->
         <scene sceneID="F5h-GN-cJo">
             <objects>
                 <viewController id="G0c-pq-mYq" customClass="ViewMountainListController" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
@@ -892,22 +892,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-NH-shn">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-NH-shn">
                                 <rect key="frame" x="0.0" y="88" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fYj-wT-4pb" firstAttribute="leading" secondItem="QQ9-fB-q5S" secondAttribute="leading" id="B1m-Sf-aqx"/>
+                            <constraint firstItem="hHM-NH-shn" firstAttribute="top" secondItem="38a-Ld-0NA" secondAttribute="top" id="GiH-31-FRk"/>
+                            <constraint firstItem="hHM-NH-shn" firstAttribute="trailing" secondItem="38a-Ld-0NA" secondAttribute="trailing" id="Jh5-su-dwx"/>
                             <constraint firstItem="fYj-wT-4pb" firstAttribute="top" secondItem="38a-Ld-0NA" secondAttribute="top" constant="44" id="O09-cQ-rux"/>
+                            <constraint firstItem="hHM-NH-shn" firstAttribute="leading" secondItem="38a-Ld-0NA" secondAttribute="leading" id="PDo-ov-LKP"/>
                             <constraint firstAttribute="trailing" secondItem="fYj-wT-4pb" secondAttribute="trailing" id="m7c-Kw-v7Z"/>
                             <constraint firstAttribute="bottom" secondItem="fYj-wT-4pb" secondAttribute="bottom" id="xUc-l5-XFd"/>
+                            <constraint firstItem="fYj-wT-4pb" firstAttribute="top" secondItem="hHM-NH-shn" secondAttribute="bottom" id="yCh-JX-HcB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="38a-Ld-0NA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="j7t-XE-usJ"/>
+                    <navigationItem key="navigationItem" title="Nearby Mountains List" id="JKw-Yp-3Xz"/>
                     <connections>
                         <outlet property="searchBar" destination="hHM-NH-shn" id="BhI-ZI-avJ"/>
                         <outlet property="tableView" destination="fYj-wT-4pb" id="66p-sN-nge"/>

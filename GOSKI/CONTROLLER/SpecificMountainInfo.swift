@@ -30,6 +30,7 @@ class SpecificMountainInfo: UIViewController {
         MountainDistance.text = "\(tempDist) miles away"
         if(mountainModel[myIndex]._prices[0] as! String != "-1"){
             MountainPrice.isEnabled = true
+            MountainPrice.setTitleColor(UIColor.blue, for: .normal)
             MountainPrice.setTitle("Ticket Prices: >>", for: .normal)
         }
         else{

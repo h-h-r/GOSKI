@@ -578,9 +578,9 @@
                     <navigationItem key="navigationItem" title="Nearby Mountains" id="5bS-X9-tQV">
                         <barButtonItem key="rightBarButtonItem" id="V3n-3m-0jh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="16P-Z9-jWx">
-                                <rect key="frame" x="250" y="7" width="109" height="30"/>
+                                <rect key="frame" x="297" y="7" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Mountains"/>
+                                <state key="normal" title="View List"/>
                                 <connections>
                                     <segue destination="G0c-pq-mYq" kind="show" id="mtT-7D-Ynv"/>
                                 </connections>
@@ -1178,7 +1178,7 @@
             </objects>
             <point key="canvasLocation" x="3025" y="1382"/>
         </scene>
-        <!--Mountain Ticket Price-->
+        <!--Ticket Prices-->
         <scene sceneID="fSj-Zb-bK4">
             <objects>
                 <viewController id="Kiv-Lh-LJi" customClass="MountainTicketPrice" customModule="GOSKI" customModuleProvider="target" sceneMemberID="viewController">
@@ -1186,7 +1186,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="naM-rw-ozf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="naM-rw-ozf">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1225,6 +1225,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kBz-CL-Mu0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Ticket Prices" id="2vI-oH-Sxw"/>
                     <connections>
                         <outlet property="tableView" destination="naM-rw-ozf" id="CAf-Nv-YMR"/>
                     </connections>

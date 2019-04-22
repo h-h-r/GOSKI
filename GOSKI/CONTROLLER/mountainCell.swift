@@ -20,5 +20,4 @@ class mountainCell: UITableViewCell {
         distanceAway.text = "\(tempDist) miles away"
         
     }
-
 }

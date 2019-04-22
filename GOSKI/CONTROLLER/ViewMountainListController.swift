@@ -73,7 +73,19 @@ class ViewMountainListController: UIViewController, UITableViewDelegate, UITable
     
     //determines what index a user clicked on if they clicked oin a cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
+        if(searching){
+            let cell = tableView.cellForRow(at: indexPath) as! mountainCell
+            var i: Int = 0
+            for x in mountainModel{
+                if(x.name == cell.mountainLabel.text){
+                    myIndex = i
+                }
+                i += 1
+            }
+        }
+        else{
+            myIndex = indexPath.row
+        }
         performSegue(withIdentifier: "mountainSegue", sender: self)
     }
     

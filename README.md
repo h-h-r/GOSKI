@@ -14,5 +14,5 @@ Download this skeleton project.
 3. (Pods you need)
 * 'Firebase/Core' 'Firebase/Auth' 'Firebase/Database' 'SVProgressHUD' 'SwipeCellKit'
 'RealmSwift' 'ChameleonFramework' 'GoogleMaps' 'GooglePlaces'
-* try to build project, if xcode complains about: "no such modual ...",   type   "pod update" in the terminal  and hit enter in the terminal; wait till you see "Pod installation complete!"
+* try to build project, if xcode complains about: "no such module ...",   type   "pod update" in the terminal  and hit enter in the terminal; wait till you see "Pod installation complete!"
 		
